@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T00:00:00Z",
+  "title": "Design System: System OS",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Naranja Rescoldo", "canonical": "#f97316", "tonalRamp": ["#431407", "#7c2d12", "#c2410c", "#ea580c", "#f97316", "#fb923c", "#fdba74", "#ffedd5"] },
+      "accent-hover": { "role": "primary", "displayName": "Naranja Rescoldo claro", "canonical": "#fb923c" },
+      "accent-ink": { "role": "primary", "displayName": "Tinta de Rescoldo", "canonical": "#1a0d03" },
+      "accent-soft": { "role": "primary", "displayName": "Halo Naranja", "canonical": "rgb(249 115 22 / 0.12)" },
+      "done": { "role": "secondary", "displayName": "Cian Completado", "canonical": "#5dd6d1", "tonalRamp": ["#0f3a39", "#165a58", "#1f807c", "#2ba8a3", "#5dd6d1", "#86e2de", "#b6efec", "#e3faf9"] },
+      "done-soft": { "role": "secondary", "displayName": "Cian Completado suave", "canonical": "rgb(93 214 209 / 0.12)" },
+      "note": { "role": "tertiary", "displayName": "Ámbar Apunte", "canonical": "#f2c08a", "tonalRamp": ["#3d2410", "#6b421d", "#a0682f", "#d0904f", "#f2c08a", "#f6d2aa", "#fae4ca", "#fdf4ea"] },
+      "note-soft": { "role": "tertiary", "displayName": "Ámbar Apunte suave", "canonical": "rgb(242 192 138 / 0.06)" },
+      "bg": { "role": "neutral", "displayName": "Penumbra Grafito", "canonical": "#0b0d12", "tonalRamp": ["#07080c", "#0b0d12", "#131720", "#1e232c", "#262c37", "#3a4250", "#7b8391", "#e6e8ec"] },
+      "surface": { "role": "neutral", "displayName": "Grafito Superficie", "canonical": "#131720" },
+      "surface-2": { "role": "neutral", "displayName": "Grafito Elevado", "canonical": "#1e232c" },
+      "surface-3": { "role": "neutral", "displayName": "Grafito Profundo", "canonical": "#262c37" },
+      "ink": { "role": "neutral", "displayName": "Tiza", "canonical": "#f5f5f5", "tonalRamp": ["#1f2937", "#4b5563", "#7b8391", "#9ca3af", "#c7ccd3", "#e2e4e8", "#f5f5f5", "#ffffff"] },
+      "ink-2": { "role": "neutral", "displayName": "Gris Niebla", "canonical": "#9ca3af" },
+      "ink-3": { "role": "neutral", "displayName": "Gris Ceniza", "canonical": "#7b8391" },
+      "line": { "role": "neutral", "displayName": "Línea Fantasma", "canonical": "rgb(255 255 255 / 0.08)" },
+      "line-strong": { "role": "neutral", "displayName": "Línea Firme", "canonical": "rgb(255 255 255 / 0.14)" },
+      "danger": { "role": "neutral", "displayName": "Rojo Aviso", "canonical": "#f87171", "tonalRamp": ["#450a0a", "#7f1d1d", "#b91c1c", "#ef4444", "#f87171", "#fca5a5", "#fecaca", "#fef2f2"] },
+      "code-ink": { "role": "neutral", "displayName": "Tinta de código", "canonical": "#e9e3dc" },
+      "inline-code-ink": { "role": "neutral", "displayName": "Tinta de código en línea", "canonical": "#f3e6da" },
+      "syntax-string": { "role": "neutral", "displayName": "Sintaxis: cadenas", "canonical": "#b9d99a" },
+      "syntax-type": { "role": "neutral", "displayName": "Sintaxis: tipos", "canonical": "#c4b5fd" },
+      "paper-dark": { "role": "neutral", "displayName": "Papel de diagrama oscuro", "canonical": "#0f0f0f" },
+      "grain-1": { "role": "neutral", "displayName": "Grain grafito", "canonical": "#1a1e27" },
+      "grain-2": { "role": "neutral", "displayName": "Grain rescoldo", "canonical": "#4a230b" },
+      "grain-3": { "role": "neutral", "displayName": "Grain sombra", "canonical": "#11141b" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Nombre \"System OS\" en la pantalla de título de Inicio." },
+      "headline": { "displayName": "Headline", "purpose": "Nombre de la materia en su menú y en la intro." },
+      "title": { "displayName": "Title", "purpose": "Título del documento en el lector." },
+      "menu": { "displayName": "Menu", "purpose": "Ítems del TitleMenu, alineados a la derecha." },
+      "read-heading": { "displayName": "Read heading", "purpose": "h2 de la lectura, con línea superior entre secciones." },
+      "body-read": { "displayName": "Body read", "purpose": "Cuerpo de documentos y apuntes, columna de 42 rem." },
+      "body": { "displayName": "Body", "purpose": "Interfaz y subtítulos." },
+      "body-sm": { "displayName": "Body sm", "purpose": "Filas de navegación, ayudas de teclas, botones." },
+      "label": { "displayName": "Label", "purpose": "Solo encabezados de grupo de la paleta y del recuadro de consigna. Nunca encima de un título." },
+      "mono": { "displayName": "Mono", "purpose": "Código, notación y keycaps, sin ligaduras." }
+    },
+    "shadows": [
+      { "name": "float", "value": "0 1px 0 rgb(255 255 255 / 0.04) inset, 0 16px 40px -12px rgb(0 0 0 / 0.6)", "purpose": "Solo lo que flota: tooltips, diálogos, paleta y drawer." }
+    ],
+    "materials": [
+      { "name": "material-top", "value": "linear-gradient(180deg, rgb(11 13 18 / 0.86) 0%, rgb(11 13 18 / 0.6) 55%, rgb(11 13 18 / 0) 100%) + mask 50%→0 + blur(14px) desde 1024px", "purpose": "Velo del header, sin borde." },
+      { "name": "material-side", "value": "linear-gradient(90deg, rgb(19 23 32 / 0.5) 0%, rgb(19 23 32 / 0.28) 72%, rgb(19 23 32 / 0) 100%)", "purpose": "Tinte de la sidebar que se funde con el contenido." },
+      { "name": "glass-float", "value": "rgb(19 23 32 / 0.82) + blur(18px) saturate(1.15), borde line, sombra float", "purpose": "Superficie de lo que flota." },
+      { "name": "menu-band", "value": "linear-gradient(90deg, rgb(249 115 22 / 0) 0%, rgb(249 115 22 / 0.07) 38%, rgb(249 115 22 / 0.2) 80%, rgb(249 115 22 / 0.14) 92%, rgb(249 115 22 / 0) 100%)", "purpose": "Banda de selección del TitleMenu." },
+      { "name": "backdrop-shade", "value": "var(--backdrop-shade)", "purpose": "Degradado de legibilidad sobre la ilustración de materia; tercio izquierdo y base oscuros." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Curva por defecto de entradas y estados." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Salidas orquestadas (intro, drawer al cerrar)." },
+      { "name": "duration-fast", "value": "120ms", "purpose": "Presión y salidas de popovers." },
+      { "name": "duration-base", "value": "200ms", "purpose": "Transiciones de color y entradas de popovers." },
+      { "name": "duration-slow", "value": "360ms", "purpose": "Apertura del drawer." },
+      { "name": "menu-band-duration", "value": "260ms", "purpose": "Desplazamiento de la banda del menú (120 ms con movimiento reducido)." },
+      { "name": "intro-duration", "value": "3400ms", "purpose": "Secuencia completa de la intro de materia." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Title Menu",
+      "kind": "nav",
+      "refersTo": "title-menu-item",
+      "description": "Menú único de las pantallas de título: banda de luz y marca S sobre el ítem activo.",
+      "html": "<nav class=\"ds-title-menu\"><ul><li><a href=\"#\" class=\"ds-tm-item is-active\" aria-current=\"true\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M9 21.5c2.2 1.6 4.4 2.3 6.8 2.3 3.4 0 5.6-1.7 5.6-4.3 0-5.6-11.6-3.4-11.6-9 0-2.5 2.2-4.3 5.5-4.3 2.1 0 4 .6 5.8 1.8\" fill=\"none\" stroke=\"var(--color-accent, #f97316)\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg><span>Técnicas de Programación</span></a></li><li class=\"ds-tm-gap\"><a href=\"#\" class=\"ds-tm-item\">Mis apuntes</a></li><li><a href=\"#\" class=\"ds-tm-item\">Configuración</a></li></ul></nav>",
+      "css": ".ds-title-menu { background: var(--color-bg, #0b0d12); padding: 24px; font-family: var(--font-sans, 'Geist Variable', system-ui, sans-serif); } .ds-title-menu ul { list-style: none; margin: 0; padding: 0; } .ds-tm-gap { margin-top: 1.25rem; } .ds-tm-item { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 6px 12px 6px 40px; border-radius: 0.375rem; font-size: clamp(1.25rem, 2.1vw, 1.625rem); line-height: 1.25; color: var(--color-ink-2, #9ca3af); text-decoration: none; outline: none; transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tm-item:hover { color: var(--color-ink, #f5f5f5); } .ds-tm-item.is-active, .ds-tm-item:focus-visible { color: var(--color-ink, #f5f5f5); background: linear-gradient(90deg, rgb(249 115 22 / 0) 0%, rgb(249 115 22 / 0.07) 38%, rgb(249 115 22 / 0.2) 80%, rgb(249 115 22 / 0.14) 92%, rgb(249 115 22 / 0) 100%); }"
+    },
+    {
+      "name": "Keycap",
+      "kind": "chip",
+      "refersTo": "kbd",
+      "description": "Tecla propia para ayudas y atajos; los íconos van siempre dentro.",
+      "html": "<span class=\"ds-hint\"><kbd class=\"ds-kbd\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"9 10 4 15 9 20\"/><path d=\"M20 4v7a4 4 0 0 1-4 4H4\"/></svg></kbd> Entrar</span>",
+      "css": ".ds-hint { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans, system-ui, sans-serif); font-size: 0.875rem; color: var(--color-ink-2, #9ca3af); } .ds-kbd { display: inline-flex; height: 20px; min-width: 20px; align-items: center; justify-content: center; padding: 0 6px; border-radius: 0.25rem; border: 1px solid var(--color-line-strong, rgb(255 255 255 / 0.14)); background: rgb(30 35 44 / 0.6); font-family: var(--font-mono, 'JetBrains Mono Variable', monospace); font-size: 0.6875rem; color: var(--color-ink-2, #9ca3af); font-variant-ligatures: none; }"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Botón de ícono de 36 px con nombre accesible y tooltip.",
+      "html": "<button type=\"button\" class=\"ds-icon-btn\" aria-label=\"Buscar\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg></button>",
+      "css": ".ds-icon-btn { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border: 0; border-radius: 0.5rem; background: transparent; color: var(--color-ink-2, #9ca3af); cursor: pointer; transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-icon-btn:hover { background: rgb(30 35 44 / 0.7); color: var(--color-ink, #f5f5f5); } .ds-icon-btn:focus-visible { outline: 2px solid var(--color-accent, #f97316); outline-offset: 2px; } .ds-icon-btn:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Acción secundaria con contorno (Reintentar, Abrir con…).",
+      "html": "<button type=\"button\" class=\"ds-btn-outline\">Reintentar</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 0.5rem; border: 1px solid var(--color-line-strong, rgb(255 255 255 / 0.14)); background: transparent; color: var(--color-ink, #f5f5f5); font-family: var(--font-sans, system-ui, sans-serif); font-size: 0.875rem; cursor: pointer; transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-outline:hover { background: var(--color-surface-2, #1e232c); } .ds-btn-outline:focus-visible { outline: 2px solid var(--color-accent, #f97316); outline-offset: 2px; } .ds-btn-outline:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Sidebar Row",
+      "kind": "nav",
+      "refersTo": "nav-row",
+      "description": "Fila de navegación; el documento actual lleva la barra naranja.",
+      "html": "<ul class=\"ds-nav\"><li><a href=\"#\" class=\"ds-nav-row is-current\" aria-current=\"page\"><span class=\"ds-nav-mark\"></span>Introducción</a></li><li><a href=\"#\" class=\"ds-nav-row\">Clases y objetos</a></li></ul>",
+      "css": ".ds-nav { list-style: none; margin: 0; padding: 8px; width: 18rem; background: linear-gradient(90deg, rgb(19 23 32 / 0.5) 0%, rgb(19 23 32 / 0.28) 72%, rgb(19 23 32 / 0) 100%); } .ds-nav-row { position: relative; display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 0.5rem; font-family: var(--font-sans, system-ui, sans-serif); font-size: 0.875rem; color: var(--color-ink-2, #9ca3af); text-decoration: none; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-row:hover { background: rgb(30 35 44 / 0.4); color: var(--color-ink, #f5f5f5); } .ds-nav-row.is-current { background: rgb(30 35 44 / 0.7); color: var(--color-ink, #f5f5f5); } .ds-nav-row:focus-visible { outline: 2px solid var(--color-accent, #f97316); outline-offset: 2px; } .ds-nav-mark { position: absolute; left: 0; top: 6px; bottom: 6px; width: 2px; border-radius: 9999px; background: var(--color-accent, #f97316); }"
+    },
+    {
+      "name": "Filter Input",
+      "kind": "input",
+      "refersTo": "input-filter",
+      "description": "Filtro de contenidos de la sidebar.",
+      "html": "<label class=\"ds-filter\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Filtrar\" /></label>",
+      "css": ".ds-filter { display: flex; height: 32px; align-items: center; gap: 8px; padding: 0 10px; border-radius: 0.5rem; border: 1px solid var(--color-line, rgb(255 255 255 / 0.08)); background: rgb(11 13 18 / 0.4); color: var(--color-ink-3, #7b8391); transition: border-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-filter:focus-within { border-color: rgb(249 115 22 / 0.6); } .ds-filter input { flex: 1; min-width: 0; border: 0; background: transparent; outline: none; font-family: var(--font-sans, system-ui, sans-serif); font-size: 0.875rem; color: var(--color-ink, #f5f5f5); } .ds-filter input::placeholder { color: var(--color-ink-3, #7b8391); }"
+    },
+    {
+      "name": "Floating Dialog",
+      "kind": "card",
+      "refersTo": "dialog",
+      "description": "Superficie de vidrio para lo que flota: diálogos y paleta.",
+      "html": "<div class=\"ds-dialog\" role=\"dialog\"><p class=\"ds-dialog-title\">Configuración</p><p class=\"ds-dialog-desc\">Sonido, efectos y lectura.</p></div>",
+      "css": ".ds-dialog { max-width: 32rem; padding: 24px; border-radius: 1.125rem; border: 1px solid var(--color-line, rgb(255 255 255 / 0.08)); background: rgb(19 23 32 / 0.82); backdrop-filter: blur(18px) saturate(1.15); box-shadow: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 16px 40px -12px rgb(0 0 0 / 0.6); font-family: var(--font-sans, system-ui, sans-serif); } .ds-dialog-title { margin: 0; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--color-ink, #f5f5f5); } .ds-dialog-desc { margin: 4px 0 0; font-size: 0.875rem; color: var(--color-ink-2, #9ca3af); }"
+    },
+    {
+      "name": "Reader Link Card",
+      "kind": "card",
+      "refersTo": "reader-link-card",
+      "description": "Recuadro de anterior/siguiente en el lector (nunca en pantallas de título).",
+      "html": "<a href=\"#\" class=\"ds-link-card\"><span class=\"ds-link-card-meta\">Siguiente</span><span class=\"ds-link-card-title\">Herencia y polimorfismo</span></a>",
+      "css": ".ds-link-card { display: flex; flex-direction: column; gap: 4px; max-width: 20rem; padding: 14px 16px; border-radius: 0.875rem; border: 1px solid var(--color-line, rgb(255 255 255 / 0.08)); text-decoration: none; font-family: var(--font-sans, system-ui, sans-serif); transition: border-color 200ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-link-card:hover { border-color: var(--color-line-strong, rgb(255 255 255 / 0.14)); background: rgb(19 23 32 / 0.5); } .ds-link-card:focus-visible { outline: 2px solid var(--color-accent, #f97316); outline-offset: 2px; } .ds-link-card-meta { font-size: 0.75rem; color: var(--color-ink-3, #7b8391); } .ds-link-card-title { font-size: 0.875rem; color: var(--color-ink, #f5f5f5); }"
+    },
+    {
+      "name": "Progress Bar",
+      "kind": "custom",
+      "refersTo": "progress-bar",
+      "description": "Única expresión de progreso por vista: naranja en curso, cian al completar.",
+      "html": "<div class=\"ds-progress\"><div class=\"ds-progress-track\"><div class=\"ds-progress-fill\" style=\"transform: scaleX(0.4)\"></div></div><p class=\"ds-progress-text\">6 de 15 completados</p></div>",
+      "css": ".ds-progress { width: 16rem; font-family: var(--font-sans, system-ui, sans-serif); } .ds-progress-track { height: 4px; overflow: hidden; border-radius: 9999px; background: var(--color-line, rgb(255 255 255 / 0.08)); } .ds-progress-fill { height: 100%; transform-origin: left; border-radius: 9999px; background: var(--color-accent, #f97316); transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-progress-text { margin: 6px 0 0; font-size: 0.6875rem; color: var(--color-ink-3, #7b8391); font-variant-numeric: tabular-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La pantalla de título en penumbra",
+    "overview": "System OS se entra como se entra a un juego: una penumbra azul-grafito a sangre, el nombre grande en serif abajo a la izquierda y un único menú abajo a la derecha que se recorre con el teclado. La selección es una banda de luz cálida que se desvanece en sus extremos, acompañada por la marca \"S\" en trazo naranja. Ese es el único foco cálido de la pantalla; todo lo demás es grafito, gris y blanco atenuado.\n\nDetrás de la entrada hay un segundo modo, el de lectura: una columna de 42 rem, cuerpo de 17 px con interlineado 1,75, nada animado detrás del texto. Los dos modos comparten un solo ambiente (una capa de fondo fija para toda la app) y un material continuo sin costuras: header y navegación se separan del contenido con velo, tinte, desenfoque y máscaras de degradado, nunca con líneas de lado a lado.\n\nLa densidad es baja en las pantallas de título y media en la navegación. La norma vinculante es `docs/auditoria-visual.md`; este documento la traduce a tokens y no la contradice.",
+    "keyCharacteristics": [
+      "Oscuro por identidad (`color-scheme: dark`), con un acento naranja raro y significativo.",
+      "Tres tipografías con roles cerrados: Instrument Serif para nombres, Geist para interfaz y lectura, JetBrains Mono sin ligaduras para código.",
+      "Material continuo: profundidad por tinte y desenfoque, no por bordes ni sombras.",
+      "Teclado primero: menú con flechas, keycaps propios y foco visible naranja.",
+      "Movimiento con curva de salida exponencial, solo `transform` y `opacity`, con fundidos cuando se pide menos movimiento."
+    ],
+    "rules": [
+      { "name": "The Three Signals Rule", "body": "El naranja es interacción e identidad, el cian es \"completado\" y el ámbar es \"apunte personal\". Ningún otro uso, ninguna mezcla.", "section": "colors" },
+      { "name": "The Tokens-Only Rule", "body": "Cada color sale de `src/styles/tokens.css`. Sin hex en componentes; los shaders leen los tokens con `token()` y los acentos dinámicos de materia se derivan con `color-mix`.", "section": "colors" },
+      { "name": "The Short Serif Rule", "body": "Instrument Serif solo para títulos cortos y nombres; nunca para párrafos, menús ni botones.", "section": "typography" },
+      { "name": "The Standalone Title Rule", "body": "Los títulos se sostienen solos: nada de etiquetas en mayúsculas encima. El contexto va en un subtítulo o en las migas de pan.", "section": "typography" },
+      { "name": "The Bare Notation Rule", "body": "El código, `kbd` y la notación se ven sin ligaduras (`calt` y `liga` apagados): \"<>\", \"<=\" y \"->\" se ven como se escriben.", "section": "typography" },
+      { "name": "The Edges Rule", "body": "En las pantallas de título el contenido se apoya en los bordes inferiores; el centro queda para el fondo.", "section": "layout" },
+      { "name": "The 42rem Column Rule", "body": "Ningún texto largo supera la columna de lectura, y nada se anima detrás de él.", "section": "layout" },
+      { "name": "The No-Seam Rule", "body": "Header, navegación y contenido nunca se separan con líneas de lado a lado; se separan con tinte, desenfoque y máscaras de degradado.", "section": "elevation" },
+      { "name": "The Only-What-Floats Rule", "body": "Hay un solo ambiente fijo para toda la app. Solo diálogos, paleta, drawer y tooltips tienen superficie y sombra propias.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** sacar cada color de `tokens.css` y derivar acentos dinámicos con `color-mix`.",
+      "**Do** usar un único `TitleMenu` con su banda de luz y la marca \"S\" en toda pantalla de título.",
+      "**Do** separar el marco del contenido con `.material-top` y `.material-side` (velo, tinte, desenfoque y máscara).",
+      "**Do** mantener el texto largo en la columna de 42 rem, a 17 px con interlineado 1,75.",
+      "**Do** animar solo `transform` y `opacity` con la curva de salida `cubic-bezier(0.22, 1, 0.36, 1)`, un momento de entrada por vista y fundidos cortos con movimiento reducido.",
+      "**Do** garantizar 44 px táctiles con `.tap`, `pointer-coarse:` o `min-h-11`.",
+      "**Do** poner la ilustración de materia a sangre bajo `--backdrop-shade` y dejar visible el ambiente cuando no hay imagen."
+    ],
+    "donts": [
+      "**Don't** usar el naranja para nada que no sea interacción o identidad, ni el cian o el ámbar fuera de \"completado\" y \"apunte personal\".",
+      "**Don't** separar header, navegación y contenido con bordes de 1 px de lado a lado.",
+      "**Don't** poner etiquetas en mayúsculas encima de un título.",
+      "**Don't** usar tarjetas en las pantallas de título.",
+      "**Don't** repetir el progreso: una barra y un \"n de N completados\" por vista.",
+      "**Don't** usar la ilustración de fondo ni nada animado detrás del texto del lector.",
+      "**Don't** usar Instrument Serif fuera de títulos cortos, ni ligaduras en código.",
+      "**Don't** usar caracteres Unicode sueltos como íconos de teclas; van dentro de keycaps."
+    ]
+  }
+}

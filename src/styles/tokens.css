@@ -1,0 +1,132 @@
+/*
+ * DESIGN TOKENS — única fuente de la identidad visual de System OS.
+ * Cada token genera una utilidad de Tailwind (bg-surface, text-ink-2, rounded-card…) y una variable CSS (var(--color-surface)).
+ * Para cambiar la identidad, editá solo este archivo.
+ */
+@theme static {
+  /* Se descartan los colores por defecto de Tailwind: solo existen los de la paleta. */
+  --color-*: initial;
+
+  /* Fondos y superficies (60 %) */
+  --color-bg: #0b0d12;
+  --color-surface: #131720;
+  --color-surface-2: #1e232c;
+  --color-surface-3: #262c37;
+
+  /* Texto y neutros (30 %) */
+  --color-ink: #f5f5f5;
+  --color-ink-2: #9ca3af;
+  --color-ink-3: #7b8391; /* solo para texto auxiliar; contraste 5:1 sobre bg, 4.7:1 sobre surface; no usar sobre surface-2 */
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.14);
+
+  /* Acentos (10 %): el naranja es identidad e interacción; el cian solo significa "completado". */
+  --color-accent: #f97316;
+  --color-accent-hover: #fb923c;
+  --color-accent-ink: #1a0d03;
+  --color-accent-soft: rgb(249 115 22 / 0.12);
+  --color-done: #5dd6d1;
+  --color-done-soft: rgb(93 214 209 / 0.12);
+  --color-danger: #f87171;
+  --color-note: #f2c08a; /* apuntes personales: ámbar cálido, distinto del naranja de interacción */
+  --color-note-soft: rgb(242 192 138 / 0.06);
+  /* Lectura técnica */
+  --color-code-ink: #e9e3dc;
+  --color-inline-code-ink: #f3e6da;
+  --color-syntax-string: #b9d99a;
+  --color-syntax-type: #c4b5fd;
+  /* Papel de los diagramas en modo oscuro: el blanco original tras invert(1) + contrast(0.88). */
+  --color-paper-dark: #0f0f0f;
+  /* Paleta del Grain Gradient (fondo de la Home): grises neutros con un rescoldo naranja. */
+  --color-grain-1: #1a1e27;
+  --color-grain-2: #4a230b;
+  --color-grain-3: #11141b;
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Tipografía */
+  --font-sans: 'Geist Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono Variable', 'Cascadia Code', Consolas, monospace;
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.125rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.375rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-read: 1.0625rem; /* 17px: cuerpo de lectura */
+  --text-read--line-height: 1.75;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-3xl: clamp(2.75rem, 6vw, 4.5rem);
+  --text-3xl--line-height: 1;
+
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.08em;
+
+  /* Medidas */
+  --spacing: 0.25rem;
+  --container-read: 42rem; /* ~70 caracteres de lectura; en rem para que títulos y párrafos compartan el mismo ancho */
+  --container-page: 72rem;
+  --width-sidebar: 18rem;
+  --width-rail: 4rem;
+  --height-header: 3.5rem;
+
+  /* Radios */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-card: 0.875rem;
+  --radius-panel: 1.125rem;
+
+  /* Sombras: discretas, solo para lo que flota. */
+  --shadow-float: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 16px 40px -12px rgb(0 0 0 / 0.6);
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.03) inset;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 360ms;
+
+  /* Desenfoque de materiales (solo escritorio) */
+  --blur-glass: 14px;
+}
+
+/* Materiales continuos (canales RGB para poder variar la opacidad sin repetir colores). */
+:root {
+  --material-veil: 11 13 18; /* = bg: velo del header */
+  --material-tint: 19 23 32; /* = surface: tinte de la sidebar y superficies translúcidas */
+  --ambient-glow: rgb(249 115 22 / 0.1); /* brillo naranja del ambiente */
+  --ambient-shade: rgb(30 35 44 / 0.9);
+
+  /* Pantallas de título */
+  --menu-band: linear-gradient(90deg, rgb(249 115 22 / 0) 0%, rgb(249 115 22 / 0.07) 38%, rgb(249 115 22 / 0.2) 80%, rgb(249 115 22 / 0.14) 92%, rgb(249 115 22 / 0) 100%);
+  --menu-band-duration: 260ms;
+  --backdrop-shade: radial-gradient(ellipse 42% 55% at 88% 82%, rgb(11 13 18 / 0.6) 0%, rgb(11 13 18 / 0) 100%),
+    linear-gradient(90deg, rgb(11 13 18 / 0.92) 0%, rgb(11 13 18 / 0.55) 42%, rgb(11 13 18 / 0.25) 70%, rgb(11 13 18 / 0.55) 100%),
+    linear-gradient(180deg, rgb(11 13 18 / 0.45) 0%, rgb(11 13 18 / 0) 30%, rgb(11 13 18 / 0) 60%, rgb(11 13 18 / 0.9) 100%);
+  --intro-duration: 3400ms;
+  /* Cambio de escena (view transition) y eco de la ilustración detrás del lector. */
+  --duration-scene: 720ms;
+  --menu-band-confirm: linear-gradient(90deg, rgb(249 115 22 / 0) 0%, rgb(249 115 22 / 0.16) 38%, rgb(249 115 22 / 0.42) 80%, rgb(249 115 22 / 0.3) 92%, rgb(249 115 22 / 0) 100%);
+  --eco-opacity: 0.42;
+  --eco-mask: linear-gradient(180deg, var(--color-bg) 0%, transparent 40vh), linear-gradient(90deg, var(--color-bg) 0%, transparent 22rem);
+}
+
+:root {
+  /* Capas */
+  --z-ambient: 0;
+  --z-base: 1;
+  --z-header: 20;
+  --z-overlay: 40;
+  --z-toast: 60;
+}

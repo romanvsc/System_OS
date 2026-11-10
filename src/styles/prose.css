@@ -1,0 +1,203 @@
+/* Tipografía de lectura para documentos académicos y apuntes. Columna controlada, sin tarjetas. */
+.prose-read {
+  font-size: var(--text-read);
+  line-height: var(--text-read--line-height);
+  color: rgb(245 245 245 / 0.86);
+  overflow-wrap: anywhere;
+}
+.prose-read > * + * {
+  margin-top: 1.1em;
+}
+.prose-read h1,
+.prose-read h2,
+.prose-read h3,
+.prose-read h4 {
+  color: var(--color-ink);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  scroll-margin-top: calc(var(--height-header) + 1rem);
+  text-wrap: balance;
+}
+.prose-read h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+.prose-read h2 {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin-top: 2.4em;
+  padding-top: 1.4em;
+  border-top: 1px solid var(--color-line);
+}
+.prose-read > section:first-child > h2:first-child,
+.prose-read > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.prose-read h3 {
+  font-size: 1.1rem;
+  margin-top: 2em;
+}
+.prose-read h4 {
+  font-size: 1rem;
+  margin-top: 1.6em;
+}
+.prose-read h2 + *,
+.prose-read h3 + *,
+.prose-read h4 + * {
+  margin-top: 0.6em;
+}
+.prose-read p {
+  text-wrap: pretty;
+}
+.prose-read strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.prose-read em {
+  color: rgb(245 245 245 / 0.92);
+}
+.prose-read a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: rgb(249 115 22 / 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--duration-base) var(--ease-out), color var(--duration-base);
+}
+.prose-read a:hover {
+  color: var(--color-accent-hover);
+  text-decoration-color: currentColor;
+}
+.prose-read ul,
+.prose-read ol {
+  padding-left: 1.4em;
+}
+.prose-read ul {
+  list-style: disc;
+}
+.prose-read ol {
+  list-style: decimal;
+}
+.prose-read li + li {
+  margin-top: 0.45em;
+}
+.prose-read li > ul,
+.prose-read li > ol {
+  margin-top: 0.45em;
+}
+.prose-read li::marker {
+  color: var(--color-ink-3);
+}
+.prose-read hr {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+  margin: 2.5em 0;
+}
+.prose-read blockquote {
+  border-left: 2px solid var(--color-line-strong);
+  padding-left: 1em;
+  color: var(--color-ink-2);
+}
+.prose-read :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 0.12em 0.4em;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  color: var(--color-inline-code-ink);
+  white-space: break-spaces;
+}
+.prose-read table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.94em;
+  display: block;
+  overflow-x: auto;
+}
+.prose-read th,
+.prose-read td {
+  text-align: left;
+  padding: 0.55em 0.8em;
+  border-bottom: 1px solid var(--color-line);
+}
+.prose-read th {
+  color: var(--color-ink);
+  font-weight: 600;
+  border-bottom-color: var(--color-line-strong);
+}
+.prose-read img {
+  max-width: 100%;
+  border-radius: var(--radius-md);
+}
+
+/* Columna de lectura controlada; los diagramas (.wide) pueden usar más ancho. */
+.prose-read > :not(.wide, section),
+.prose-read > section > :not(.wide),
+.prose-read > section[data-role='consigna'] {
+  max-width: var(--container-read);
+  margin-inline: auto;
+}
+.prose-read > section > * + * {
+  margin-top: 1.1em;
+}
+
+/* Secciones semánticas detectadas por título (ver rehypeSections). */
+.prose-read section[data-role='consigna'] {
+  position: relative;
+  padding: 1.1em 1.25em 1.2em;
+  border-radius: var(--radius-card);
+  background: rgb(249 115 22 / 0.045);
+  border: 1px solid rgb(249 115 22 / 0.16);
+}
+.prose-read section[data-role='consigna'] > h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+  font-weight: 600;
+}
+.prose-read section[data-role='consigna'] > p {
+  color: var(--color-ink);
+}
+.prose-read section[data-role='ejemplo'] > h2 ~ * {
+  border-left: 2px solid var(--color-line-strong);
+  padding-left: 1em;
+}
+.prose-read section[data-role='supuestos'] > h2 ~ * {
+  color: var(--color-ink-2);
+}
+
+/* Pseudocódigo y código */
+.prose-read pre code.hljs {
+  background: transparent;
+  padding: 0;
+}
+.hljs-keyword,
+.hljs-built_in,
+.hljs-literal {
+  color: var(--color-accent-hover);
+}
+.hljs-string {
+  color: var(--color-syntax-string);
+}
+.hljs-number {
+  color: var(--color-note);
+}
+.hljs-comment {
+  color: var(--color-ink-3);
+  font-style: italic;
+}
+.hljs-title,
+.hljs-function .hljs-title {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.hljs-type,
+.hljs-attr {
+  color: var(--color-syntax-type);
+}
