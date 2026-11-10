@@ -1,5 +1,5 @@
 import { Download, FileDown } from 'lucide-react'
-import { downloadBlob, useServerInfo, useWorkspace } from '../lib/api.ts'
+import { STATIC, downloadBlob, useServerInfo, useWorkspace } from '../lib/api.ts'
 import { useUi, type EffectsLevel, type IntroMode } from '../lib/store.ts'
 import { Modal } from '../ui/Modal.tsx'
 import { cx } from '../ui/primitives.tsx'
@@ -107,13 +107,24 @@ export function SettingsDialog() {
           Copia de seguridad
         </h3>
         <div className="flex flex-wrap gap-2">
-          <a
-            href="/api/workspace?download"
-            download
-            className="pressable inline-flex items-center gap-2 rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-ink hover:bg-accent-hover"
-          >
-            <Download size={15} aria-hidden /> Exportar respaldo (.json)
-          </a>
+          {STATIC ? (
+            <button
+              type="button"
+              disabled={!workspace.data}
+              onClick={() => downloadBlob(`system-os-respaldo-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(workspace.data, null, 2), 'application/json')}
+              className="pressable inline-flex items-center gap-2 rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-ink hover:bg-accent-hover disabled:opacity-40"
+            >
+              <Download size={15} aria-hidden /> Exportar respaldo (.json)
+            </button>
+          ) : (
+            <a
+              href="/api/workspace?download"
+              download
+              className="pressable inline-flex items-center gap-2 rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-ink hover:bg-accent-hover"
+            >
+              <Download size={15} aria-hidden /> Exportar respaldo (.json)
+            </a>
+          )}
           <button
             type="button"
             disabled={notes.length === 0}
@@ -124,7 +135,9 @@ export function SettingsDialog() {
           </button>
         </div>
         <p className="mt-3 text-xs leading-relaxed text-ink-2">
-          El respaldo incluye apuntes, progreso y últimos accesos. Para restaurarlo, reemplazá el archivo de datos por el respaldo con la app cerrada.
+          {STATIC
+            ? 'El respaldo incluye apuntes, progreso y últimos accesos de este dispositivo. Estos datos viven en este navegador: borrar los datos del sitio los elimina.'
+            : 'El respaldo incluye apuntes, progreso y últimos accesos. Para restaurarlo, reemplazá el archivo de datos por el respaldo con la app cerrada.'}
         </p>
       </section>
 

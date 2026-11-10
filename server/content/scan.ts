@@ -9,7 +9,7 @@ const FONDO_EXT = /\.(webp|avif|jpe?g|png)$/i
 const FONDO_FILE = /^fondo\.(webp|avif|jpe?g|png)$/i
 const IMAGE_EXT = new Set(['.svg', '.png', '.jpg', '.jpeg', '.gif', '.webp'])
 // Ocultos, privados y carpetas de herramientas no son contenido académico.
-const IGNORED = /^(\.|_|~\$)|^(node_modules|materia\.json|desktop\.ini|thumbs\.db)$/i
+export const IGNORED = /^(\.|_|~\$)|^(node_modules|materia\.json|desktop\.ini|thumbs\.db)$/i
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' })
 
 const isTheory = (name: string) => /^teor/i.test(name)

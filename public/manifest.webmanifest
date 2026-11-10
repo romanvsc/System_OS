@@ -1,0 +1,12 @@
+{
+  "name": "System OS",
+  "short_name": "System OS",
+  "description": "Espacio de estudio personal.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B0D12",
+  "theme_color": "#0B0D12",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

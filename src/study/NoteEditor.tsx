@@ -4,8 +4,8 @@ import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { useQueryClient } from '@tanstack/react-query'
 import { Link2, Trash2 } from 'lucide-react'
-import type { Note, Subject, Workspace } from '../../shared/types.ts'
-import { useDeleteNote } from '../lib/api.ts'
+import type { Note, Subject } from '../../shared/types.ts'
+import { saveNote, useDeleteNote } from '../lib/api.ts'
 import { docRoute, locateDoc } from '../lib/subject.ts'
 import { cx } from '../ui/primitives.tsx'
 
@@ -36,14 +36,7 @@ export function NoteEditor({ note, subjects, onDeleted }: { note: Note; subjects
       pending.current = null
       setState('guardando')
       try {
-        const res = await fetch(`/api/notes/${note.id}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(patch),
-          keepalive,
-        })
-        if (!res.ok) throw new Error()
-        const { workspace } = (await res.json()) as { workspace: Workspace }
+        const { workspace } = await saveNote(note.id, patch, keepalive)
         qc.setQueryData(['workspace'], workspace)
         if (!pending.current) setState('guardado')
       } catch {

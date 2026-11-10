@@ -6,7 +6,7 @@ import type { ContentIndex } from './content/index.ts'
 import type { ServerInfo } from '../shared/types.ts'
 import { resolveInside } from './paths.ts'
 
-const MIME: Record<string, string> = {
+export const MIME: Record<string, string> = {
   '.md': 'text/markdown; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
   '.svg': 'image/svg+xml',

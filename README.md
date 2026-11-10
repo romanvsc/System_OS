@@ -78,6 +78,21 @@ El Inicio y el menú de cada materia funcionan como la pantalla de título de un
 - **Lema:** en `materia.json` podés agregar `"lema": "frase corta"`, que aparece en la intro, y `"fondo": "ruta/imagen.webp"` si la imagen no está en la raíz.
 - **Sonidos de menú:** suaves y generados por la app. Vienen apagados; se activan en Configuración → Sonidos de menú.
 
+## Versión para el celular (Vercel)
+
+Además de la versión local, la app se puede publicar como sitio estático e instalar en el celular. Una vez abierta, funciona sin internet.
+
+- **Contenido:** se publica la copia de las materias que está en `content/`. Para actualizarla después de cambiar algo en `iAes/`:
+  ```bash
+  npm run content:sync   # copia las materias de iAes/ a content/
+  git add content && git commit -m "Actualizar contenido" && git push
+  ```
+  Vercel vuelve a publicar solo con cada push.
+- **Build:** `npm run build:static`, configurado en `vercel.json`. Genera `dist/` con el contenido en `/api/subjects.json`, `/api/corpus.json` y `/api/file/…`.
+- **Tus datos en el celular:** apuntes y progreso se guardan en el navegador del celular y **no se sincronizan** con la PC. Exportá un respaldo desde Configuración. Borrar los datos del sitio los elimina.
+- **Instalar:** abrí el sitio en el celular y usá "Agregar a pantalla de inicio". La primera visita descarga todo el contenido, y después funciona sin conexión.
+- **Privacidad:** el contenido de `content/` queda publicado en la web y en el repositorio.
+
 ## Agregar contenido
 
 - **Una materia nueva:** creá su carpeta dentro de `iAes/` con un `materia.json`. Por ejemplo, para que aparezca `Sistemas`, alcanza con crear `Sistemas/materia.json`.

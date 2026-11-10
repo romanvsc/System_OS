@@ -8,7 +8,9 @@
     "build": "tsc -p . && vite build",
     "start": "vite build && vite preview",
     "typecheck": "tsc -p .",
-    "test": "node --import tsx --test server/server.test.ts"
+    "test": "node --import tsx --test server/server.test.ts",
+    "build:static": "tsc -p . && vite build --mode static && node --import tsx scripts/export-static.ts content dist",
+    "content:sync": "node --import tsx scripts/export-static.ts .. content --copia"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",

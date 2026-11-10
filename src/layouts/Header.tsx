@@ -1,6 +1,6 @@
 import { Link, useMatch } from 'react-router'
 import { Menu, NotebookPen, Search, Settings2 } from 'lucide-react'
-import { useSubjects } from '../lib/api.ts'
+import { STATIC, useSubjects } from '../lib/api.ts'
 import { useUi } from '../lib/store.ts'
 import { IconButton, Kbd, Tip, cx } from '../ui/primitives.tsx'
 import { StudyTimer } from '../study/StudyTimer.tsx'
@@ -24,7 +24,7 @@ export function BrandMark({ size = 22 }: { size?: number }) {
 /** Indicador discreto: el servidor local responde (todo corre en esta computadora). */
 function LocalStatus() {
   const { isError, isSuccess } = useSubjects()
-  const label = isError ? 'Servidor local detenido' : 'Funcionando en local, sin internet'
+  const label = STATIC ? 'Datos guardados en este dispositivo' : isError ? 'Servidor local detenido' : 'Funcionando en local, sin internet'
   return (
     <Tip label={label}>
       <span tabIndex={0} className="hidden items-center gap-1.5 rounded-md px-2 py-1 text-xs text-ink-3 lg:inline-flex" aria-label={label}>
