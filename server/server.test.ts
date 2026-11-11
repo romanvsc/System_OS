@@ -53,7 +53,7 @@ test('descubre solo carpetas con materia.json y respeta la estructura', async ()
   assert.deepEqual(pilas.docs[2].assets.sort(), ['Pilas/Busqueda/busqueda.png', 'Pilas/Busqueda/busqueda.svg'])
 
   const [tp] = pilas.practicos
-  assert.equal(tp.title, 'Trabajo Práctico Nº 1')
+  assert.equal(tp.title, 'Trabajo práctico 1')
   assert.equal(tp.statement?.kind, 'practico')
   // Orden natural: 01, 02, 10.
   assert.deepEqual(tp.exercises.map((e) => e.label), ['Ejercicio 01', 'Ejercicio 02', 'Ejercicio 10'])
@@ -127,4 +127,25 @@ test('fondo en materia.json: ruta propia válida, ausente o fuera de la materia'
   assert.equal(c.meta.fondo, undefined, 'no se puede salir de la carpeta de la materia')
   assert.equal(d.meta.fondo, undefined)
   assert.ok(d.warnings.some((w) => w.includes('"fondo"')))
+})
+
+test('temas en orden de cursada, enunciado suelto dentro de su TP y nombre desde la teoría', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'system-os-temas-'))
+  const s = path.join(root, 'm')
+  await write(s, 'materia.json', JSON.stringify({ nombre: 'M' }))
+  await write(s, 'Arboles/Teoria.md', '# Árboles: teoría básica')
+  await write(s, 'Arboles/TpN7.md', '# Trabajo Práctico N.º 7 — “Árboles”')
+  await write(s, 'Arboles/TPN-7/Ejercicio 01/e.md', '# E1')
+  await write(s, 'Colas/Teoria.md', '# Colas: teoría básica')
+  await write(s, 'Colas/TpN2.md', '# Trabajo Práctico Nº2 “Colas”')
+  await write(s, 'Colas/TPN-2/Ejercicio 01/e.md', '# E1')
+  await write(s, 'Extra/nota.md', '# Sin TP')
+  const subject = await scanSubject(s, 'm')
+
+  assert.deepEqual(subject.topics.map((t) => t.title), ['Colas', 'Árboles', 'Extra'])
+  const [colas] = subject.topics
+  assert.deepEqual(colas.docs.map((d) => d.path), ['Colas/Teoria.md'], 'el enunciado ya no figura como teoría')
+  assert.equal(colas.practicos[0].statement?.path, 'Colas/TpN2.md')
+  assert.equal(colas.practicos[0].statement?.kind, 'practico')
+  assert.equal(colas.practicos[0].title, 'Trabajo práctico 2')
 })

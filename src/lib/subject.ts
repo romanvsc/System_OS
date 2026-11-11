@@ -5,7 +5,15 @@ import { useSubjects, useWorkspace } from './api.ts'
 
 const enc = encodeURIComponent
 export const subjectRoute = (subject: string) => `/m/${enc(subject)}`
-export const docRoute = (subject: string, path: string) => `/m/${enc(subject)}/d/${path.split('/').map(enc).join('/')}`
+/** Nivel del menú de la materia en la URL, así "atrás" y los links internos vuelven al mismo lugar. */
+export type MenuLevel = { ver?: 'temas' | 'recursos'; tema?: string; tp?: string }
+export function menuRoute(subject: string, level: MenuLevel = {}) {
+  const q = new URLSearchParams(Object.entries(level).filter(([, v]) => v) as [string, string][]).toString()
+  return `${subjectRoute(subject)}${q ? `?${q}` : ''}`
+}
+export const practicoDocs = (p: Practico) => [...(p.statement ? [p.statement] : []), ...p.exercises]
+export const topicDocs = (t: Topic) => [...t.docs, ...t.practicos.flatMap(practicoDocs)]
+export const docRoute =(subject: string, path: string) => `/m/${enc(subject)}/d/${path.split('/').map(enc).join('/')}`
 export const notesRoute = (subject?: string, noteId?: string) =>
   `${subject ? `/m/${enc(subject)}/apuntes` : '/apuntes'}${noteId ? `?n=${enc(noteId)}` : ''}`
 

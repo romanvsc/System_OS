@@ -16,3 +16,9 @@ export function progressOf(subjectId: string, docs: DocNode[], progress: Workspa
   const done = countable.filter((d) => progress[progressKey(subjectId, d.path)]).length
   return { done, total: countable.length, ratio: countable.length ? done / countable.length : 0 }
 }
+
+/** Nombre corto dentro de su tema: "Colas — busqueda" → "Busqueda", "Colas: teoría básica" → "Teoría básica". */
+export function shortLabel(label: string): string {
+  const rest = /^.{2,}?\s+[—–]\s+(.+)$/.exec(label)?.[1] ?? /^.{2,}?:\s*(teor.+)$/i.exec(label)?.[1]
+  return rest ? rest.charAt(0).toLocaleUpperCase('es') + rest.slice(1) : label
+}

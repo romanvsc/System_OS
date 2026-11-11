@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router'
-import { ArrowLeft, BookOpen, Home, NotebookPen, PanelLeftClose, PanelLeftOpen, Search } from 'lucide-react'
+import { ArrowLeft, Home, NotebookPen, PanelLeftClose, PanelLeftOpen, Search } from 'lucide-react'
 import { progressOf } from '../../shared/docs.ts'
 import type { SubjectContext } from '../layouts/SubjectLayout.tsx'
 import { useUi } from '../lib/store.ts'
-import { docRoute, monogram, notesRoute, subjectRoute } from '../lib/subject.ts'
+import { menuRoute, monogram, notesRoute, subjectRoute, topicDocs } from '../lib/subject.ts'
 import { useCurrentDoc } from '../features/subject/useDocNeighbors.ts'
 import { IconButton, ProgressBar, ProgressRing, Tip, cx } from '../ui/primitives.tsx'
 import { SidebarTree } from './SidebarTree.tsx'
@@ -92,6 +92,7 @@ export function SidebarPanel({ subject, docs, workspace, onCollapse, morph }: Su
 
 /** Riel contraído: íconos con tooltip; ningún destino queda inaccesible. */
 function SidebarRail({ subject, docs, workspace, onExpand }: SubjectContext & { onExpand: () => void }) {
+  const { path } = useCurrentDoc()
   const { done, total, ratio } = progressOf(subject.id, docs, workspace?.progress ?? {})
   const linkClass = 'pressable inline-flex size-10 items-center justify-center rounded-lg text-ink-2 hover:bg-surface-2/60 hover:text-ink'
   return (
@@ -107,15 +108,21 @@ function SidebarRail({ subject, docs, workspace, onExpand }: SubjectContext & { 
         </GameLink>
       </Tip>
       <span className="h-3" aria-hidden />
-      {subject.topics.map((t) => {
-        const first = t.docs[0] ?? t.practicos[0]?.statement ?? t.practicos[0]?.exercises[0]
-        return first ? (
-          <Tip key={t.id} label={t.title} side="right">
-            <Link to={docRoute(subject.id, first.path)} className={linkClass} aria-label={t.title}>
-              <BookOpen size={16} aria-hidden />
-            </Link>
+      {/* Cada tema con su número (el mismo del menú y del árbol): se distinguen sin abrir el panel. */}
+      {subject.topics.map((t, i) => {
+        const here = !!path && topicDocs(t).some((d) => d.path === path)
+        return (
+          <Tip key={t.id} label={`${i + 1}. ${t.title}`} side="right">
+            <GameLink
+              to={menuRoute(subject.id, { tema: t.id })}
+              aria-label={`Tema ${i + 1}: ${t.title}`}
+              aria-current={here ? 'location' : undefined}
+              className={cx(linkClass, 'text-sm font-semibold tabular-nums', here && 'bg-surface-2/70 text-ink shadow-[inset_2px_0_0_var(--color-accent)]')}
+            >
+              {i + 1}
+            </GameLink>
           </Tip>
-        ) : null
+        )
       })}
       <Tip label="Apuntes de la materia" side="right">
         <Link to={notesRoute(subject.id)} className={linkClass} aria-label="Apuntes de la materia">

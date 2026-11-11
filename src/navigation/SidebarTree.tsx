@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { NavLink } from 'react-router'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { ChevronRight, CircleCheck, Circle } from 'lucide-react'
-import { progressKey, progressOf } from '../../shared/docs.ts'
+import { progressKey, progressOf, shortLabel } from '../../shared/docs.ts'
 import type { DocNode, Subject, Workspace } from '../../shared/types.ts'
 import { normalize } from '../lib/search.ts'
 import { docRoute } from '../lib/subject.ts'
@@ -25,13 +25,13 @@ function NavItem({ subject, doc, label, done, current }: { subject: string; doc:
         ) : (
           <Circle size={14} className="shrink-0 text-ink-3/60" aria-hidden />
         )}
-        <span className="min-w-0 flex-1 truncate">{label ?? doc.label}</span>
+        <span className="min-w-0 flex-1 truncate" title={doc.title}>{label ?? shortLabel(doc.label)}</span>
       </NavLink>
     </li>
   )
 }
 
-function Group({ title, meta, defaultOpen, forceOpen, level = 0, children }: { title: string; meta?: ReactNode; defaultOpen: boolean; forceOpen: boolean; level?: number; children: ReactNode }) {
+function Group({ title, num, meta, defaultOpen, forceOpen, level = 0, children }: { title: string; num?: number; meta?: ReactNode; defaultOpen: boolean; forceOpen: boolean; level?: number; children: ReactNode }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
     <Collapsible.Root open={forceOpen || open} onOpenChange={setOpen}>
@@ -42,6 +42,7 @@ function Group({ title, meta, defaultOpen, forceOpen, level = 0, children }: { t
         )}
       >
         <ChevronRight size={14} aria-hidden className="shrink-0 text-ink-3 transition-transform duration-200 [[data-state=open]>&]:rotate-90" />
+        {num !== undefined && <span aria-hidden className="w-4 shrink-0 text-right text-xs tabular-nums text-ink-3">{num}</span>}
         <span className="min-w-0 flex-1 truncate">{title}</span>
         {meta}
       </Collapsible.Trigger>
@@ -63,7 +64,7 @@ export function SidebarTree({ subject, workspace, currentPath, filter }: { subje
   )
   const contains = (docs: DocNode[]) => !!currentPath && docs.some((d) => d.path === currentPath)
 
-  const topics = subject.topics.map((topic) => {
+  const topics = subject.topics.map((topic, index) => {
     const all = [...topic.docs, ...topic.practicos.flatMap((p) => [...(p.statement ? [p.statement] : []), ...p.exercises])]
     const { done, total } = progressOf(subject.id, all, progress)
     const docs = topic.docs.filter((d) => match(d, topic.title))
@@ -75,6 +76,7 @@ export function SidebarTree({ subject, workspace, currentPath, filter }: { subje
       <Group
         key={topic.id}
         title={topic.title}
+        num={subject.topics.length > 1 ? index + 1 : undefined}
         defaultOpen={subject.topics.length === 1 || contains(all) || !currentPath}
         forceOpen={!!q}
         meta={subject.topics.length > 1 ? <span className="text-2xs tabular-nums text-ink-3">{done}/{total}</span> : undefined}

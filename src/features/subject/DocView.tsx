@@ -1,9 +1,10 @@
 import { useMemo } from 'react'
 import { Link, useParams } from 'react-router'
 import { ArrowLeft, ArrowRight, Download, ExternalLink } from 'lucide-react'
-import type { DocNode } from '../../../shared/types.ts'
+import type { DocNode, Topic } from '../../../shared/types.ts'
+import { shortLabel } from '../../../shared/docs.ts'
 import { fileUrl, useMarkdown } from '../../lib/api.ts'
-import { docRoute, locateDoc, subjectRoute } from '../../lib/subject.ts'
+import { docRoute, locateDoc, menuRoute, subjectRoute, topicDocs } from '../../lib/subject.ts'
 import { useSubjectContext } from '../../layouts/SubjectLayout.tsx'
 import { MarkdownView } from '../../content/MarkdownView.tsx'
 import { DiagramFigure } from '../../content/DiagramFigure.tsx'
@@ -55,18 +56,25 @@ function FileBody({ subject, doc }: { subject: string; doc: DocNode }) {
   )
 }
 
-function PrevNext() {
+function PrevNext({ topic }: { topic?: Topic }) {
+  const { subject } = useSubjectContext()
   const { prev, next, prevDoc, nextDoc } = useDocNeighbors()
   if (!prev && !next) return null
+  // Cruzar a otro tema se anuncia: el salto deja de ser sorpresa.
+  const topicOf = (d?: DocNode) => (d ? locateDoc(subject, d.path)?.topic : undefined)
+  const prevTopic = topicOf(prevDoc)
+  const nextTopic = topicOf(nextDoc)
+  const prevCross = prevTopic && prevTopic.id !== topic?.id ? prevTopic : undefined
+  const nextCross = nextTopic && nextTopic.id !== topic?.id ? nextTopic : undefined
   const card = 'pressable group flex min-w-0 flex-1 flex-col gap-1 rounded-[var(--radius-card)] border border-line px-4 py-3.5 hover:border-line-strong hover:bg-surface/50'
   return (
     <nav aria-label="Documentos anterior y siguiente" className="mt-16 flex flex-col gap-3 sm:flex-row">
       {prev && prevDoc ? (
         <GameLink to={prev} exit={false} className={card}>
           <span className="flex items-center gap-1.5 text-xs text-ink-3">
-            <ArrowLeft size={13} aria-hidden className="transition-transform group-hover:-translate-x-0.5" /> Anterior <span className="hidden sm:inline">· [</span>
+            <ArrowLeft size={13} aria-hidden className="transition-transform group-hover:-translate-x-0.5" /> {prevCross ? `Tema anterior · ${prevCross.title}` : 'Anterior'} <span className="hidden sm:inline">· [</span>
           </span>
-          <span className="truncate text-sm text-ink">{prevDoc.label}</span>
+          <span className="truncate text-sm text-ink">{prevCross ? prevDoc.label : shortLabel(prevDoc.label)}</span>
         </GameLink>
       ) : (
         <span className="hidden flex-1 sm:block" />
@@ -74,9 +82,9 @@ function PrevNext() {
       {next && nextDoc && (
         <GameLink to={next} exit={false} className={cx(card, 'sm:items-end sm:text-right')}>
           <span className="flex items-center gap-1.5 text-xs text-ink-3">
-            <span className="hidden sm:inline">] ·</span> Siguiente <ArrowRight size={13} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
+            <span className="hidden sm:inline">] ·</span> {nextCross ? `Siguiente tema · ${nextCross.title}` : 'Siguiente'} <ArrowRight size={13} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
           </span>
-          <span className="max-w-full truncate text-sm text-ink">{nextDoc.label}</span>
+          <span className="max-w-full truncate text-sm text-ink">{nextCross ? nextDoc.label : shortLabel(nextDoc.label)}</span>
         </GameLink>
       )}
     </nav>
@@ -98,11 +106,11 @@ export function DocView() {
   const { doc, topic, practico } = loc
   const crumbs = [
     { label: subject.meta.nombre, to: subjectRoute(subject.id) },
-    ...(topic ? [{ label: topic.title, to: topic.docs[0] ? docRoute(subject.id, topic.docs[0].path) : undefined }] : [{ label: 'Recursos' }]),
-    ...(practico && practico.statement?.path !== doc.path
-      ? [{ label: practico.title, to: practico.statement ? docRoute(subject.id, practico.statement.path) : undefined }]
-      : []),
+    ...(topic ? [{ label: topic.title, to: menuRoute(subject.id, { tema: topic.id }) }] : [{ label: 'Recursos', to: menuRoute(subject.id, { ver: 'recursos' }) }]),
+    ...(practico && topic ? [{ label: practico.title, to: menuRoute(subject.id, { tema: topic.id, tp: practico.id }) }] : []),
   ]
+  const inTopic = topic ? topicDocs(topic) : []
+  const position = inTopic.findIndex((d) => d.path === doc.path)
 
   return (
     <article className="mx-auto w-full max-w-[60rem] px-4 pb-24 pt-8 sm:px-8 sm:pt-12">
@@ -122,6 +130,11 @@ export function DocView() {
                 )}
               </li>
             ))}
+            {position >= 0 && (
+              <li className="tabular-nums" aria-label={`Documento ${position + 1} de ${inTopic.length} del tema`}>
+                · {position + 1} de {inTopic.length}
+              </li>
+            )}
           </ol>
         </nav>
           {doc.kind !== 'recurso' && <ProgressToggle subject={subject.id} path={doc.path} compact />}
@@ -157,7 +170,7 @@ export function DocView() {
           </div>
         )}
         <DocNotes subject={subject.id} docPath={doc.path} />
-        <PrevNext />
+        <PrevNext topic={topic} />
       </div>
     </article>
   )

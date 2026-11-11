@@ -106,15 +106,40 @@ async function scanPractico(absDir: string, root: string): Promise<Practico> {
   return { id: toPosix(path.relative(root, absDir)), title: statement?.title ?? prettify(path.basename(absDir)), statement, exercises }
 }
 
-async function scanTopic(absDir: string, root: string): Promise<Topic | null> {
-  const docs = await docsInFolder(absDir, root, 'teoria', { theoryFirst: true })
+const STATEMENT_TITLE = /trabajo pr[aá]ctico/i
+/** Número de TP en un título: "TPN 7", "Trabajo Práctico Nº2", "Trabajo practico N: 4". */
+export function tpNumber(text: string): number | undefined {
+  const m = /(?:trabajo pr[aá]ctico|tp)\D{0,6}(\d+)/i.exec(text)
+  return m ? Number(m[1]) : undefined
+}
+
+async function scanTopic(absDir: string, root: string): Promise<(Topic & { order?: number }) | null> {
+  let docs = await docsInFolder(absDir, root, 'teoria', { theoryFirst: true })
   const practicos: Practico[] = []
   for (const sub of (await listDir(absDir)).dirs) {
     if (isPractico(sub.name)) practicos.push(await scanPractico(sub.abs, root))
     else docs.push(...(await walkDocs(sub.abs, root, 'teoria')))
   }
   if (docs.length === 0 && practicos.length === 0) return null
-  return { id: toPosix(path.relative(root, absDir)), title: prettify(path.basename(absDir)), docs, practicos }
+  // Enunciado suelto en la raíz del tema ("TpN2.md" junto a la teoría): pertenece al único TP sin enunciado.
+  const loose = practicos.filter((p) => !p.statement)
+  const statement = docs.find((d) => d.format === 'md' && STATEMENT_TITLE.test(d.title))
+  if (statement && loose.length === 1) {
+    loose[0].statement = { ...statement, kind: 'practico' }
+    docs = docs.filter((d) => d !== statement)
+  }
+  let order: number | undefined
+  for (const p of practicos) {
+    const n = tpNumber(p.title) ?? tpNumber(p.statement?.title ?? '')
+    if (n !== undefined) {
+      p.title = `Trabajo práctico ${n}`
+      order = Math.min(order ?? n, n)
+    }
+  }
+  // Nombre del tema desde la teoría ("Colas: teoría básica" → "Colas"); si no, el de la carpeta.
+  const theory = docs.find((d) => isTheory(path.posix.basename(d.path)))
+  const named = theory && /^(.{2,}?)\s*[:—–-]\s*teor/i.exec(theory.title)?.[1]
+  return { id: toPosix(path.relative(root, absDir)), title: named || prettify(path.basename(absDir)), docs, practicos, order }
 }
 
 export function parseMeta(raw: string | null, id: string): { meta: SubjectMeta; warnings: string[] } {
@@ -154,11 +179,15 @@ export async function scanSubject(absDir: string, id: string): Promise<Subject> 
   const raw = await fs.readFile(path.join(absDir, META_FILE), 'utf8').catch(() => null)
   const { meta, warnings } = parseMeta(raw, id)
   const { dirs } = await listDir(absDir)
-  const topics: Topic[] = []
+  const scanned: (Topic & { order?: number })[] = []
   for (const dir of dirs) {
     const topic = await scanTopic(dir.abs, absDir)
-    if (topic) topics.push(topic)
+    if (topic) scanned.push(topic)
   }
+  // Orden de cursada: por número de TP; los temas sin número quedan al final, en el orden alfabético de antes.
+  const rank = (t: { order?: number }) => t.order ?? Number.MAX_SAFE_INTEGER
+  scanned.sort((a, b) => rank(a) - rank(b))
+  const topics: Topic[] = scanned.map(({ order: _order, ...t }) => t)
   const resources = await docsInFolder(absDir, absDir, 'recurso')
   const subject: Subject = { id, meta, topics, resources, warnings }
   await resolveFondo(subject, absDir)
