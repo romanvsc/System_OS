@@ -29,7 +29,7 @@ iAes/
 ├── system-os/                  ← esta app
 └── tecnicas_programacion/      ← materia
     ├── materia.json            ← metadatos (lo único que agrega la app a tu carpeta)
-    ├── pautas.md               ← archivos sueltos en la raíz → "Recursos"
+    ├── guia.pdf                ← archivos sueltos en la raíz → "Recursos" (pautas.md se ignora)
     └── Pilas/                  ← cada carpeta de primer nivel → un TEMA
         ├── Teoria.md           ← un archivo que empieza con "Teor" → teoría del tema (va primero)
         ├── Busqueda/           ← otras carpetas → SUBTEMAS

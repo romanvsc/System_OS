@@ -20,7 +20,8 @@ async function fixture() {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'system-os-'))
   const s = 'tecnicas_programacion'
   await write(root, `${s}/materia.json`, JSON.stringify({ nombre: 'Técnicas de Programación', descripcion: 'd' }))
-  await write(root, `${s}/pautas.md`, 'Copiá y pegá este prompt. Está adaptado para que resuelva cada ejercicio.')
+  await write(root, `${s}/pautas.md`, 'Copiá y pegá este prompt.')
+  await write(root, `${s}/guia.md`, 'Esta guía resume cómo se resuelve cada ejercicio de la materia.')
   await write(root, `${s}/Pilas/Teoria.md`, '# Pilas: teoría básica\n\nUna **pila** es LIFO.')
   await write(root, `${s}/Pilas/Busqueda/busqueda.md`, '# Búsqueda en una pila enlazada')
   await write(root, `${s}/Pilas/Busqueda/busqueda.svg`, '<svg/>')
@@ -43,7 +44,7 @@ test('descubre solo carpetas con materia.json y respeta la estructura', async ()
 
   const [subject] = subjects
   assert.equal(subject.meta.nombre, 'Técnicas de Programación')
-  assert.deepEqual(subject.resources.map((r) => [r.path, r.kind, r.title]), [['pautas.md', 'recurso', 'Pautas']], 'una oración larga no se usa como título')
+  assert.deepEqual(subject.resources.map((r) => [r.path, r.kind, r.title]), [['guia.md', 'recurso', 'Guia']], 'pautas.md no aparece; una oración larga no se usa como título')
 
   const [pilas] = subject.topics
   assert.equal(pilas.title, 'Pilas')
@@ -56,7 +57,7 @@ test('descubre solo carpetas con materia.json y respeta la estructura', async ()
   assert.equal(tp.title, 'Trabajo práctico 1')
   assert.equal(tp.statement?.kind, 'practico')
   // Orden natural: 01, 02, 10.
-  assert.deepEqual(tp.exercises.map((e) => e.label), ['Ejercicio 01', 'Ejercicio 02', 'Ejercicio 10'])
+  assert.deepEqual(tp.exercises.map((e) => e.label), ['Ejercicio 1', 'Ejercicio 2', 'Ejercicio 10'], 'del título tras la raya')
   assert.ok(tp.exercises.every((e) => e.kind === 'ejercicio' && e.assets.length === 1))
 
   assert.equal(flattenDocs(subject).length, 8)
@@ -148,4 +149,21 @@ test('temas en orden de cursada, enunciado suelto dentro de su TP y nombre desde
   assert.equal(colas.practicos[0].statement?.path, 'Colas/TpN2.md')
   assert.equal(colas.practicos[0].statement?.kind, 'practico')
   assert.equal(colas.practicos[0].title, 'Trabajo práctico 2')
+})
+
+test('unidades numeradas, ejercicios sueltos como práctico y nombre del tema tras los dos puntos', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'system-os-unidades-'))
+  const s = path.join(root, 'c')
+  await write(s, 'materia.json', JSON.stringify({ nombre: 'C' }))
+  await write(s, 'Final/README.md', '# Final')
+  await write(s, 'Unidad 02/Teoria.md', '# Unidad 2 propuesta: operatoria comercial')
+  await write(s, 'Unidad 01/Teoria.md', '# Unidad 1 propuesta: empresa como organización')
+  for (const n of ['01', '02']) await write(s, `Unidad 01/Ejercicio ${n}/e.md`, `# Unidad 1 propuesta — Ejercicio ${Number(n)}: Algo`)
+  const subject = await scanSubject(s, 'c')
+
+  assert.deepEqual(subject.topics.map((t) => t.title), ['Empresa como organización', 'Operatoria comercial', 'Final'])
+  const [u1] = subject.topics
+  assert.deepEqual(u1.docs.map((d) => d.path), ['Unidad 01/Teoria.md'])
+  assert.equal(u1.practicos[0].title, 'Ejercicios')
+  assert.deepEqual(u1.practicos[0].exercises.map((e) => [e.kind, e.label]), [['ejercicio', 'Ejercicio 1: Algo'], ['ejercicio', 'Ejercicio 2: Algo']])
 })

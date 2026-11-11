@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { NavLink } from 'react-router'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { ChevronRight, CircleCheck, Circle } from 'lucide-react'
-import { progressKey, progressOf, shortLabel } from '../../shared/docs.ts'
+import { navLabel, progressKey, progressOf } from '../../shared/docs.ts'
 import type { DocNode, Subject, Workspace } from '../../shared/types.ts'
 import { normalize } from '../lib/search.ts'
 import { docRoute } from '../lib/subject.ts'
@@ -25,7 +25,7 @@ function NavItem({ subject, doc, label, done, current }: { subject: string; doc:
         ) : (
           <Circle size={14} className="shrink-0 text-ink-3/60" aria-hidden />
         )}
-        <span className="min-w-0 flex-1 truncate" title={doc.title}>{label ?? shortLabel(doc.label)}</span>
+        <span className="min-w-0 flex-1 truncate" title={doc.title}>{label ?? navLabel(doc)}</span>
       </NavLink>
     </li>
   )

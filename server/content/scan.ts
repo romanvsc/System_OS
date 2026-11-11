@@ -8,12 +8,13 @@ export const META_FILE = 'materia.json'
 const FONDO_EXT = /\.(webp|avif|jpe?g|png)$/i
 const FONDO_FILE = /^fondo\.(webp|avif|jpe?g|png)$/i
 const IMAGE_EXT = new Set(['.svg', '.png', '.jpg', '.jpeg', '.gif', '.webp'])
-// Ocultos, privados y carpetas de herramientas no son contenido académico.
-export const IGNORED = /^(\.|_|~\$)|^(node_modules|materia\.json|desktop\.ini|thumbs\.db)$/i
+// Ocultos, privados, carpetas de herramientas y pautas.md (el prompt para resolver ejercicios) no son contenido de estudio.
+export const IGNORED = /^(\.|_|~\$)|^(node_modules|materia\.json|pautas\.md|desktop\.ini|thumbs\.db)$/i
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' })
 
 const isTheory = (name: string) => /^teor/i.test(name)
 const isPractico = (name: string) => /^(tp|trabajo)/i.test(name)
+const isExercise = (name: string) => /^ejercicio/i.test(name)
 const toPosix = (p: string) => p.split(path.sep).join('/')
 
 export function formatOf(name: string): DocFormat {
@@ -86,8 +87,9 @@ async function docsInFolder(absDir: string, root: string, kind: DocKind, opts: {
   for (const f of others) {
     docs.push({ path: rel(f.abs), title: prettify(f.name), label: prettify(f.name), kind, format: formatOf(f.name), assets: [] })
   }
-  // Un ejercicio suele ser una carpeta con un único .md: el nombre de la carpeta ("Ejercicio 01") es la mejor etiqueta.
-  if (kind === 'ejercicio' && mds.length === 1) docs[0].label = folderLabel
+  // Un ejercicio suele ser una carpeta con un único .md. Si su título trae "… — Ejercicio 1: Clasificar…", vale lo que sigue
+  // a la raya; si no, el nombre de la carpeta ("Ejercicio 01").
+  if (kind === 'ejercicio' && mds.length === 1) docs[0].label = /\s[—–]\s(.+)$/.exec(docs[0].title)?.[1] ?? folderLabel
   if (opts.theoryFirst) docs.sort((a, b) => Number(isTheory(path.posix.basename(b.path))) - Number(isTheory(path.posix.basename(a.path))))
   return docs
 }
@@ -116,10 +118,14 @@ export function tpNumber(text: string): number | undefined {
 async function scanTopic(absDir: string, root: string): Promise<(Topic & { order?: number }) | null> {
   let docs = await docsInFolder(absDir, root, 'teoria', { theoryFirst: true })
   const practicos: Practico[] = []
+  const loneExercises: DocNode[] = []
   for (const sub of (await listDir(absDir)).dirs) {
     if (isPractico(sub.name)) practicos.push(await scanPractico(sub.abs, root))
+    else if (isExercise(sub.name)) loneExercises.push(...(await walkDocs(sub.abs, root, 'ejercicio')))
     else docs.push(...(await walkDocs(sub.abs, root, 'teoria')))
   }
+  // Carpetas "Ejercicio NN" sueltas en el tema (sin TP): se agrupan como un práctico, para navegarlas igual que un TP.
+  if (loneExercises.length) practicos.push({ id: `${toPosix(path.relative(root, absDir))}#ejercicios`, title: 'Ejercicios', statement: null, exercises: loneExercises })
   if (docs.length === 0 && practicos.length === 0) return null
   // Enunciado suelto en la raíz del tema ("TpN2.md" junto a la teoría): pertenece al único TP sin enunciado.
   const loose = practicos.filter((p) => !p.statement)
@@ -128,7 +134,8 @@ async function scanTopic(absDir: string, root: string): Promise<(Topic & { order
     loose[0].statement = { ...statement, kind: 'practico' }
     docs = docs.filter((d) => d !== statement)
   }
-  let order: number | undefined
+  // Orden: el número de TP o, si no hay, el de la carpeta ("Unidad 03").
+  let order: number | undefined = Number(/^unidad\s*(\d+)/i.exec(path.basename(absDir))?.[1]) || undefined
   for (const p of practicos) {
     const n = tpNumber(p.title) ?? tpNumber(p.statement?.title ?? '')
     if (n !== undefined) {
@@ -136,9 +143,11 @@ async function scanTopic(absDir: string, root: string): Promise<(Topic & { order
       order = Math.min(order ?? n, n)
     }
   }
-  // Nombre del tema desde la teoría ("Colas: teoría básica" → "Colas"); si no, el de la carpeta.
+  // Nombre del tema desde la teoría: "Colas: teoría básica" → "Colas"; "Unidad 1 propuesta: empresa como…" → "Empresa como…".
+  // Sin teoría, el de la carpeta.
   const theory = docs.find((d) => isTheory(path.posix.basename(d.path)))
-  const named = theory && /^(.{2,}?)\s*[:—–-]\s*teor/i.exec(theory.title)?.[1]
+  const after = theory && /^[^:]{2,}?:\s*(.+)$/.exec(theory.title)?.[1]
+  const named = theory && (/^(.{2,}?)\s*[:—–-]\s*teor/i.exec(theory.title)?.[1] ?? (after && after.charAt(0).toLocaleUpperCase('es') + after.slice(1)))
   return { id: toPosix(path.relative(root, absDir)), title: named || prettify(path.basename(absDir)), docs, practicos, order }
 }
 

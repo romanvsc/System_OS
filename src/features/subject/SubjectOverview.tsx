@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import { CircleCheck } from 'lucide-react'
-import { progressKey, progressOf, shortLabel } from '../../../shared/docs.ts'
+import { navLabel, progressKey, progressOf } from '../../../shared/docs.ts'
 import type { DocNode, Practico } from '../../../shared/types.ts'
 import { useSubjectContext } from '../../layouts/SubjectLayout.tsx'
 import { fileUrl } from '../../lib/api.ts'
@@ -66,7 +66,7 @@ export function SubjectOverview() {
       </span>
     )
   }
-  const docItem = (d: DocNode, label = shortLabel(d.label)): MenuItem => ({ id: d.path, label, to: docRoute(subject.id, d.path), trailing: doneMark(d) })
+  const docItem = (d: DocNode, label = navLabel(d)): MenuItem => ({ id: d.path, label, to: docRoute(subject.id, d.path), trailing: doneMark(d) })
   const tpItem = (p: Practico, gapBefore: boolean): MenuItem => ({
     id: p.id,
     label: p.title,

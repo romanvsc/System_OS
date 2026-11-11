@@ -25,6 +25,12 @@ Variante más abstracta, si la primera queda muy cargada:
 
 > [ESCENA] Minimal architectural space at night: a tower of floating translucent slabs stacked one on top of another (last in, first out), lit from below by a warm amber glow; faint luminous flowchart paths connect the slabs; vast calm darkness on the left.
 
+## Contabilidad
+
+> [ESCENA] A quiet old counting room at night: a large open ledger book rests on a wooden desk, its two facing pages perfectly mirrored like the two columns of a double-entry account; beside it, an antique brass balance scale stands in exact equilibrium, both pans holding small neat stacks of paper slips and receipts. A single banker's lamp casts the warm orange glow over the ledger. Thin threads of light rise from the pages and arc gracefully into the air, connecting the two sides of the book like an equation being balanced. Tall shelves of bound ledgers and archive boxes fade into blue darkness on the left.
+
+Sumá "no numbers" a la plantilla: los libros contables tienden a salir llenos de cifras falsas.
+
 ## Inicio de System OS
 
 Es el fondo propio del Inicio. Tiene que sentirse como la entrada a todas las materias, no como una más: más amplio, más calmo y sin objetos de una materia concreta. En el Inicio el texto va abajo a la izquierda (la marca) y a la derecha (el menú y el panel de Continuar), así que la franja de abajo también tiene que quedar oscura.

@@ -22,3 +22,6 @@ export function shortLabel(label: string): string {
   const rest = /^.{2,}?\s+[—–]\s+(.+)$/.exec(label)?.[1] ?? /^.{2,}?:\s*(teor.+)$/i.exec(label)?.[1]
   return rest ? rest.charAt(0).toLocaleUpperCase('es') + rest.slice(1) : label
 }
+
+/** Etiqueta en la navegación: el archivo de teoría del tema es siempre "Teoría"; el resto, su nombre corto. */
+export const navLabel = (doc: DocNode) => (/(^|\/)teor[^/]*\.md$/i.test(doc.path) ? 'Teoría' : shortLabel(doc.label))

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link, useParams } from 'react-router'
 import { ArrowLeft, ArrowRight, Download, ExternalLink } from 'lucide-react'
 import type { DocNode, Topic } from '../../../shared/types.ts'
-import { shortLabel } from '../../../shared/docs.ts'
+import { navLabel } from '../../../shared/docs.ts'
 import { fileUrl, useMarkdown } from '../../lib/api.ts'
 import { docRoute, locateDoc, menuRoute, subjectRoute, topicDocs } from '../../lib/subject.ts'
 import { useSubjectContext } from '../../layouts/SubjectLayout.tsx'
@@ -74,7 +74,7 @@ function PrevNext({ topic }: { topic?: Topic }) {
           <span className="flex items-center gap-1.5 text-xs text-ink-3">
             <ArrowLeft size={13} aria-hidden className="transition-transform group-hover:-translate-x-0.5" /> {prevCross ? `Tema anterior · ${prevCross.title}` : 'Anterior'} <span className="hidden sm:inline">· [</span>
           </span>
-          <span className="truncate text-sm text-ink">{prevCross ? prevDoc.label : shortLabel(prevDoc.label)}</span>
+          <span className="truncate text-sm text-ink">{prevCross ? prevDoc.label : navLabel(prevDoc)}</span>
         </GameLink>
       ) : (
         <span className="hidden flex-1 sm:block" />
@@ -84,7 +84,7 @@ function PrevNext({ topic }: { topic?: Topic }) {
           <span className="flex items-center gap-1.5 text-xs text-ink-3">
             <span className="hidden sm:inline">] ·</span> {nextCross ? `Siguiente tema · ${nextCross.title}` : 'Siguiente'} <ArrowRight size={13} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
           </span>
-          <span className="max-w-full truncate text-sm text-ink">{nextCross ? nextDoc.label : shortLabel(nextDoc.label)}</span>
+          <span className="max-w-full truncate text-sm text-ink">{nextCross ? nextDoc.label : navLabel(nextDoc)}</span>
         </GameLink>
       )}
     </nav>
