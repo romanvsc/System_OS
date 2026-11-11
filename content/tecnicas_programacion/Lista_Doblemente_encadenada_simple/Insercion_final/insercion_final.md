@@ -1,0 +1,50 @@
+# Lista doblemente enlazada simple — insercion final
+
+## Enunciado y objetivo
+
+Insertar un nodo al final.
+
+**Objetivo:** Insertar un nodo al final.
+
+## Supuestos y función de las variables
+
+↑C es la cabeza; ↑A recorre para ubicar el último ↑F; ↑P es el nodo nuevo y DATO es el valor ingresado. En lista vacía ↑F queda NIL.
+
+La LDES no es circular y usa `PA` y `PS`. Una cabeza existente se inicializa con su referencia actual y una lista nueva comienza en `NIL`. Se utiliza `New(LDES)` para crear nodos. Desconectar un nodo no libera su memoria; no se inventa una instrucción de liberación.
+
+## Cómo dibujar el diagrama completo
+
+Dibujá un óvalo `Inicio` y debajo un **único rectángulo inicial** con las asignaciones del primer bloque. Después seguí los bloques en orden. En cada rombo **No sale por la izquierda y Sí por la derecha**. Una rama vacía saltea los bloques de la otra.
+
+- **Rectángulo:** `↑C ← cabeza de la LDES existente`; `↑A ← NIL`; `↑F ← NIL`; `↑P ← NIL`; `DATO ← 0`.
+- **Paralelogramo de entrada:** `DATO`.
+- **Rectángulo:** `↑A ← ↑C`; `↑F ← NIL`.
+- **WHILE, círculo 1:** poné el primer círculo 1 antes del rombo `↑A <> NIL`. Por **Sí**, a la derecha, ejecutá:
+  - **Rectángulo:** `↑F ← ↑A`; `↑A ← ↑A.PS`.
+  - El segundo círculo 1 retorna al primero. Por **No**, a la izquierda, salí del ciclo hacia el bloque siguiente.
+- **Rectángulo:** `↑P ← New(LDES)`.
+- **Rombo IF:** `↑P <> NIL`.
+  - **No (izquierda):**
+    - **Documento de salida:** `“No hay lugar”`.
+  - **Sí (derecha):**
+    - **Rectángulo:** `↑P.dato ← DATO`; `↑P.PA ← ↑F`; `↑P.PS ← NIL`.
+    - **Rombo IF:** `↑C = NIL`.
+      - **No (izquierda):**
+        - **Rectángulo:** `↑F.PS ← ↑P`.
+      - **Sí (derecha):**
+        - **Rectángulo:** `↑C ← ↑P`.
+      - Uní las ramas físicamente debajo de sus bloques antes de continuar.
+    - **Rectángulo:** `↑F ← ↑P`.
+  - Uní las ramas físicamente debajo de sus bloques antes de continuar.
+
+Desde la salida del último bloque conectá un único óvalo `Fin`. Los números de esta explicación no son conectores; los conectores reales se indican a continuación.
+
+## Conectores reales
+
+- Círculo 1: regresa justo antes de `↑A <> NIL`.
+
+## Ejemplo
+
+Insertar 30 en 10 ⇄ 20 produce 10 ⇄ 20 ⇄ 30; la cabeza no cambia.
+
+[Ver diagrama SVG](insercion_final.svg) · [Ver diagrama PNG](insercion_final.png)
