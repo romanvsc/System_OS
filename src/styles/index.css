@@ -324,6 +324,23 @@ html[data-scene='saliendo'] .scene-backdrop {
 .intro {
   animation: intro-out 420ms var(--ease-in-out) calc(var(--intro-duration) - 420ms) both;
 }
+/* Nombre propio: si reusara intro-out, el navegador conservaría el tiempo transcurrido y la daría por terminada. */
+.intro.intro--skip {
+  animation: intro-skip 260ms var(--ease-out) both;
+}
+@keyframes intro-skip {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* Con la intro encima, el menú espera en su estado inicial; entra escalonado cuando la intro empieza a irse. */
+html[data-intro] .menu-item-in,
+html[data-intro] .mark-draw {
+  animation-play-state: paused;
+}
 .intro-image {
   animation: intro-image 2600ms var(--ease-out) both;
 }

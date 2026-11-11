@@ -1,8 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Kbd } from '../ui/primitives.tsx'
 import { sfx } from './sound.ts'
 
+/** Debe coincidir con --intro-duration (tokens.css): ahí la intro ya terminó de apagarse. */
 const DURATION = 3400
+/** Salida al saltearla: un fundido corto, no un corte. */
+const SKIP_OUT_MS = 260
 const SEEN_KEY = 'system-os:intros'
 
 /** ¿Ya se vio la intro de esta materia en esta sesión? (sessionStorage puede no estar disponible). */
@@ -23,33 +26,55 @@ function markSeen(subject: string) {
   }
 }
 
+/** Mientras está `html[data-intro]`, los ítems del menú de abajo esperan (index.css); al quitarlo entran escalonados. */
+const holdMenu = (on: boolean) => {
+  if (on) document.documentElement.dataset.intro = 'on'
+  else delete document.documentElement.dataset.intro
+}
+
 /**
  * Intro de materia: la ilustración se acerca, una línea de acento se dibuja y el nombre aparece con un barrido.
- * Cualquier tecla, clic o toque la saltea. Con movimiento reducido no se muestra (lo decide quien la monta).
+ * Al final se apaga sobre el menú, que entra escalonado mientras tanto. Cualquier tecla, clic o toque la saltea
+ * con un fundido corto. Con movimiento reducido no se muestra (lo decide quien la monta).
  */
 export function SubjectIntro({ subject, name, lema, image, onDone }: { subject: string; name: string; lema?: string; image?: string; onDone: () => void }) {
+  const [skipped, setSkipped] = useState(false)
   const done = useRef(false)
   const skipRef = useRef<HTMLButtonElement>(null)
-  const finish = useRef(() => {})
-  finish.current = () => {
+  const onDoneRef = useRef(onDone)
+  onDoneRef.current = onDone
+  const finish = useRef((_skip: boolean) => {})
+  finish.current = (skip) => {
     if (done.current) return
     done.current = true
     markSeen(subject)
-    onDone()
+    holdMenu(false)
+    if (!skip) return onDoneRef.current()
+    setSkipped(true)
+    setTimeout(() => onDoneRef.current(), SKIP_OUT_MS)
   }
+
+  // Antes del primer cuadro: los ítems del menú no llegan a arrancar su entrada debajo de la intro.
+  useLayoutEffect(() => {
+    holdMenu(true)
+    return () => holdMenu(false)
+  }, [])
 
   useEffect(() => {
     skipRef.current?.focus({ preventScroll: true })
     sfx.intro()
-    const t = setTimeout(() => finish.current(), DURATION)
+    // El menú se libera cuando la intro empieza a apagarse (420 ms antes del final), así entra mientras ella se va.
+    const release = setTimeout(() => holdMenu(false), DURATION - 420)
+    const end = setTimeout(() => finish.current(false), DURATION)
     const skip = (e: Event) => {
       if (e instanceof KeyboardEvent && (e.ctrlKey || e.altKey || e.metaKey)) return
       e.preventDefault()
-      finish.current()
+      finish.current(true)
     }
     window.addEventListener('keydown', skip, { capture: true })
     return () => {
-      clearTimeout(t)
+      clearTimeout(release)
+      clearTimeout(end)
       window.removeEventListener('keydown', skip, { capture: true })
     }
   }, [])
@@ -59,9 +84,9 @@ export function SubjectIntro({ subject, name, lema, image, onDone }: { subject: 
       role="dialog"
       aria-modal="true"
       aria-label={`Entrando a ${name}`}
-      className="intro fixed inset-0 overflow-hidden bg-bg"
-      style={{ zIndex: 'var(--z-overlay)', animationDuration: `${DURATION}ms` }}
-      onPointerDown={() => finish.current()}
+      className={skipped ? 'intro intro--skip fixed inset-0 overflow-hidden bg-bg' : 'intro fixed inset-0 overflow-hidden bg-bg'}
+      style={{ zIndex: 'var(--z-overlay)' }}
+      onPointerDown={() => finish.current(true)}
     >
       {image ? (
         <img src={image} alt="" className="intro-image absolute inset-0 size-full object-cover" />
@@ -79,7 +104,7 @@ export function SubjectIntro({ subject, name, lema, image, onDone }: { subject: 
       <button
         ref={skipRef}
         type="button"
-        onClick={() => finish.current()}
+        onClick={() => finish.current(true)}
         className="pressable tap absolute bottom-6 right-6 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-ink-2 hover:text-ink"
       >
         Saltar <Kbd>Esc</Kbd>

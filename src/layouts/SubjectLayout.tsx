@@ -32,12 +32,14 @@ export function SubjectLayout() {
   const introMode = useUi((s) => s.introMode)
   const isMenu = !!useMatch('/m/:subject')
   // La intro corre al llegar al menú de la materia: siempre, una vez por sesión o nunca. Con movimiento reducido, nunca.
+  // Se decide en el render (no en un efecto): así la intro ya está en el primer cuadro de la materia y la transición
+  // de escena funde el Inicio con la intro, en lugar de mostrar el menú y taparlo un instante después.
   const [introFor, setIntroFor] = useState<string | null>(null)
-  useEffect(() => {
-    if (!subject || !isMenu || reduce || introMode === 'nunca') return
-    if (introMode === 'siempre' || !introSeen(subject.id)) setIntroFor(subject.id)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subject?.id])
+  const [checkedFor, setCheckedFor] = useState<string>()
+  if (subject && subject.id !== checkedFor) {
+    setCheckedFor(subject.id)
+    if (isMenu && !reduce && introMode !== 'nunca' && (introMode === 'siempre' || !introSeen(subject.id))) setIntroFor(subject.id)
+  }
 
   // Registra el último acceso (y el último documento, para "Continuar").
   useEffect(() => {
