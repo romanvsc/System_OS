@@ -141,7 +141,9 @@ test('temas en orden de cursada, enunciado suelto dentro de su TP y nombre desde
   await write(s, 'Colas/TpN2.md', '# Trabajo Práctico Nº2 “Colas”')
   await write(s, 'Colas/TPN-2/Ejercicio 01/e.md', '# E1')
   await write(s, 'Extra/nota.md', '# Sin TP')
+  await write(s, 'Extra/02 - Cola a pila/e.md', '# Trabajo práctico 2 — Ejercicio 10')
   const subject = await scanSubject(s, 'm')
+  assert.equal(subject.topics[2].docs.find((d) => d.path.includes('Cola a pila'))?.label, '2. Cola a pila', 'la carpeta numerada da la etiqueta')
 
   assert.deepEqual(subject.topics.map((t) => t.title), ['Colas', 'Árboles', 'Extra'])
   const [colas] = subject.topics

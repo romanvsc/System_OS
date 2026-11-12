@@ -90,6 +90,9 @@ async function docsInFolder(absDir: string, root: string, kind: DocKind, opts: {
   // Un ejercicio suele ser una carpeta con un único .md. Si su título trae "… — Ejercicio 1: Clasificar…", vale lo que sigue
   // a la raya; si no, el nombre de la carpeta ("Ejercicio 01").
   if (kind === 'ejercicio' && mds.length === 1) docs[0].label = /\s[—–]\s(.+)$/.exec(docs[0].title)?.[1] ?? folderLabel
+  // Carpeta numerada por quien estudia ("01 - Pila a cola"): ese nombre manda sobre el título del archivo.
+  const numbered = /^(\d+)\s*[-–—.]\s*(.+)$/.exec(path.basename(absDir))
+  if (numbered && mds.length === 1) docs[0].label = `${Number(numbered[1])}. ${numbered[2]}`
   if (opts.theoryFirst) docs.sort((a, b) => Number(isTheory(path.posix.basename(b.path))) - Number(isTheory(path.posix.basename(a.path))))
   return docs
 }
