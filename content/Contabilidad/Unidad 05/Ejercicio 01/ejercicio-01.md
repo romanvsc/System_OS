@@ -24,7 +24,8 @@ Empresa nueva; importes ilustrativos; sin impuestos, costos adicionales ni otros
 
 1. Cada operación tiene Debe igual al Haber: 10.000, 2.000 y 1.500 respectivamente.
 2. Mayor de Caja: Debe 10.000 + 1.500 = 11.500; Haber 2.000. Saldo deudor: 9.500.
-3. Control patrimonial: Caja 9.500 + Mercaderías 2.000 = Activo 11.500. Sin pasivos, PN = capital 10.000 + resultado positivo 1.500 = 11.500.
+3. Comprobación con resultados abiertos: Activo 11.500 + resultados negativos 0 = pasivo 0 + capital 10.000 + resultados positivos 1.500; ambos lados suman 11.500.
+4. Control patrimonial equivalente: Caja 9.500 + Mercaderías 2.000 = Activo 11.500. Sin pasivos, PN = capital 10.000 + resultado positivo 1.500 = 11.500.
 
 ## Resultado
 

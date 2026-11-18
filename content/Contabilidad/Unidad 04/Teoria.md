@@ -1,4 +1,4 @@
-# Unidad 4 propuesta: las cuentas en contabilidad
+﻿# Unidad 4 propuesta: las cuentas en contabilidad
 
 > Esta numeración es una propuesta que respeta el orden de las secciones de temas-teoria.md. El documento original presenta dos secciones llamadas Unidad 3 y ubica la Unidad 5 antes de ellas; no se afirma que esta sea la numeración oficial de la materia.
 > Sección original: Unidad 3: LAS CUENTAS EN CONTABILIDAD.
@@ -24,3 +24,7 @@ Una operación puede incluir un componente financiero **explícito** cuando se e
 Una cuenta de mayor análisis brinda más detalle que una de menor análisis. Por ejemplo, una cuenta general de clientes puede desagregarse por cliente, siempre que el plan lo prevea.
 
 El **plan de cuentas** es una lista ordenada y codificada de cuentas para registrar de manera consistente. Debe responder a la actividad, necesidades de información, nivel de detalle, posibilidad de ampliación y reglas aplicables. El **manual de cuentas** explica qué representa cada cuenta, cuándo se debita o acredita y cómo se interpreta su saldo, facilitando su uso uniforme.
+
+
+Para consultar ejemplos de cuentas, movimientos y saldos, leé el [manual de cuentas para estudiar](Manual%20de%20cuentas.md).
+

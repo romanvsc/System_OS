@@ -327,6 +327,209 @@ Se repone desde Caja exactamente lo pagado: 7.260,00. El gasto y su IVA ya se re
 | Intereses ganados | — | 2.700,00 |
 | Total del asiento | 2.700,00 | 2.700,00 |
 
+## Libro mayor — movimientos por cuenta
+
+Se trasladan los movimientos del diario. La referencia identifica el asiento; el saldo es la diferencia entre el Debe y el Haber de cada cuenta.
+
+### Caja
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 1. 01/10 — Constitución | 540.000,00 | — |
+| 3. 01/10 — Creación de fondo fijo | — | 60.000,00 |
+| 6. 03/10 — Pago parcial de acreedores | — | 31.590,06 |
+| 9. 30/10 — Reposición del fondo fijo | — | 7.260,00 |
+| Total | 540.000,00 | 98.850,06 |
+
+Saldo: 441.149,94 deudor.
+
+### Banco cuenta corriente
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 1. 01/10 — Constitución | 410.000,00 | — |
+| 4. 01/10 — Constitución del plazo fijo | — | 45.000,00 |
+| Total | 410.000,00 | 45.000,00 |
+
+Saldo: 365.000,00 deudor.
+
+### Mercaderías
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 1. 01/10 — Constitución | 290.000,00 | — |
+| 2. 01/10 — Compra y financiación | 135.000,00 | — |
+| 7.b 06/10 — Costo de la mercadería vendida | — | 90.000,00 |
+| 8.b 12/10 — Segunda compra financiada | 57.000,00 | — |
+| Total | 482.000,00 | 90.000,00 |
+
+Saldo: 392.000,00 deudor.
+
+### Acreedores comerciales
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 1. 01/10 — Constitución | — | 95.000,00 |
+| 6. 03/10 — Pago parcial de acreedores | 11.400,00 | — |
+| Total | 11.400,00 | 95.000,00 |
+
+Saldo: 83.600,00 acreedor.
+
+### Capital
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 1. 01/10 — Constitución | — | 1.145.000,00 |
+| Total | 0,00 | 1.145.000,00 |
+
+Saldo: 1.145.000,00 acreedor.
+
+### IVA crédito fiscal
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 2. 01/10 — Compra y financiación | 29.200,50 | — |
+| 5. 02/10 — Librería pagada con fondo fijo | 1.260,00 | — |
+| 8.b 12/10 — Segunda compra financiada | 12.209,40 | — |
+| Total | 42.669,90 | 0,00 |
+
+Saldo: 42.669,90 deudor.
+
+### Intereses negativos a devengar
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 2. 01/10 — Compra y financiación | 4.050,00 | — |
+| 8.b 12/10 — Segunda compra financiada | 1.140,00 | — |
+| 10.a 30/10 — Devengamiento de intereses de compras | — | 4.152,00 |
+| Total | 5.190,00 | 4.152,00 |
+
+Saldo: 1.038,00 deudor.
+
+### Proveedores
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 2. 01/10 — Compra y financiación | — | 168.250,50 |
+| 6. 03/10 — Pago parcial de acreedores | 20.190,06 | — |
+| 8.b 12/10 — Segunda compra financiada | — | 70.349,40 |
+| Total | 20.190,06 | 238.599,90 |
+
+Saldo: 218.409,84 acreedor.
+
+### Fondo fijo
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 3. 01/10 — Creación de fondo fijo | 60.000,00 | — |
+| 5. 02/10 — Librería pagada con fondo fijo | — | 7.260,00 |
+| 9. 30/10 — Reposición del fondo fijo | 7.260,00 | — |
+| Total | 67.260,00 | 7.260,00 |
+
+Saldo: 60.000,00 deudor.
+
+### Plazo fijo
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 4. 01/10 — Constitución del plazo fijo | 45.000,00 | — |
+| Total | 45.000,00 | 0,00 |
+
+Saldo: 45.000,00 deudor.
+
+### Gastos de librería
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 5. 02/10 — Librería pagada con fondo fijo | 6.000,00 | — |
+| Total | 6.000,00 | 0,00 |
+
+Saldo: 6.000,00 deudor.
+
+### Deudores por ventas
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 7.a 06/10 — Venta financiada | 228.327,00 | — |
+| 8.a 08/10 — Cobro con cheque a 30 días | — | 102.747,15 |
+| Total | 228.327,00 | 102.747,15 |
+
+Saldo: 125.579,85 deudor.
+
+### Ventas
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 7.a 06/10 — Venta financiada | — | 185.000,00 |
+| Total | 0,00 | 185.000,00 |
+
+Saldo: 185.000,00 acreedor.
+
+### Intereses positivos a devengar
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 7.a 06/10 — Venta financiada | — | 3.700,00 |
+| 10.b 30/10 — Devengamiento de intereses de ventas | 2.590,00 | — |
+| Total | 2.590,00 | 3.700,00 |
+
+Saldo: 1.110,00 acreedor.
+
+### IVA débito fiscal
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 7.a 06/10 — Venta financiada | — | 39.627,00 |
+| Total | 0,00 | 39.627,00 |
+
+Saldo: 39.627,00 acreedor.
+
+### Costo de mercaderías vendidas
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 7.b 06/10 — Costo de la mercadería vendida | 90.000,00 | — |
+| Total | 90.000,00 | 0,00 |
+
+Saldo: 90.000,00 deudor.
+
+### Valores diferidos a cobrar
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 8.a 08/10 — Cobro con cheque a 30 días | 102.747,15 | — |
+| Total | 102.747,15 | 0,00 |
+
+Saldo: 102.747,15 deudor.
+
+### Intereses perdidos
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 10.a 30/10 — Devengamiento de intereses de compras | 4.152,00 | — |
+| Total | 4.152,00 | 0,00 |
+
+Saldo: 4.152,00 deudor.
+
+### Intereses ganados
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 10.b 30/10 — Devengamiento de intereses de ventas | — | 2.590,00 |
+| 10.c 30/10 — Devengamiento del plazo fijo | — | 2.700,00 |
+| Total | 0,00 | 5.290,00 |
+
+Saldo: 5.290,00 acreedor.
+
+### Intereses de plazo fijo a cobrar
+
+| Referencia del asiento | Debe | Haber |
+| --- | ---: | ---: |
+| 10.c 30/10 — Devengamiento del plazo fijo | 2.700,00 | — |
+| Total | 2.700,00 | 0,00 |
+
+Saldo: 2.700,00 deudor.
+
 ## Comprobación — saldos y ecuación patrimonial
 
 | Cuenta | Debe acumulado | Haber acumulado | Saldo |
@@ -356,6 +559,18 @@ Se repone desde Caja exactamente lo pagado: 7.260,00. El gasto y su IVA ya se re
 Activo bruto 1.576.846,84 − intereses positivos de ventas pendientes 1.110,00 = activo neto 1.575.736,84.
 
 Pasivo bruto 341.636,84 − intereses negativos de compras pendientes 1.038,00 = pasivo neto 340.598,84.
+
+**Igualdad patrimonial dinámica, con resultados separados:**
+
+Activo neto + resultados negativos = pasivo neto + capital + resultados positivos.
+
+1.575.736,84 + 100.152,00 = 340.598,84 + 1.145.000,00 + 190.290,00
+
+**1.675.888,84 = 1.675.888,84**.
+
+Los intereses a devengar son regularizadoras: se restan del activo o del pasivo correspondiente; solo los intereses ya devengados integran los resultados. El capital se muestra separado del resultado para evitar contarlo dos veces.
+
+Como presentación equivalente, se incorpora el resultado al patrimonio neto final.
 
 Resultados positivos 190.290,00 − resultados negativos 100.152,00 = resultado 90.138,00. Capital 1.145.000,00 + resultado 90.138,00 = patrimonio neto 1.235.138,00.
 

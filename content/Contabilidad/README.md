@@ -1,4 +1,4 @@
-# Contabilidad: índice de estudio
+﻿# Contabilidad: índice de estudio
 
 Esta numeración es una propuesta que respeta el orden de las secciones de temas-teoria.md. El documento original presenta dos secciones llamadas Unidad 3 y ubica la Unidad 5 antes de ellas; no se afirma que esta sea la numeración oficial de la materia.
 
@@ -32,7 +32,7 @@ Cada unidad tiene teoría y tres ejemplos didácticos originales resueltos, en M
 
 ## Unidad 4: Las cuentas en contabilidad
 
-[Leer teoría](Unidad%2004/Teoria.md) · Sección original: Unidad 3: LAS CUENTAS EN CONTABILIDAD.
+[Leer teoría](Unidad%2004/Teoria.md) · [Manual de cuentas para estudiar](Unidad%2004/Manual%20de%20cuentas.md) · Sección original: Unidad 3: LAS CUENTAS EN CONTABILIDAD.
 
 - [Ejercicio 1: Clasificar cuentas](Unidad%2004/Ejercicio%2001/ejercicio-01.md)
 - [Ejercicio 2: Cuenta T de Caja](Unidad%2004/Ejercicio%2002/ejercicio-02.md)
@@ -45,4 +45,5 @@ Cada unidad tiene teoría y tres ejemplos didácticos originales resueltos, en M
 - [Ejercicio 1: Diario y saldo de Caja](Unidad%2005/Ejercicio%2001/ejercicio-01.md)
 - [Ejercicio 2: Compra con pago parcial](Unidad%2005/Ejercicio%2002/ejercicio-02.md)
 - [Ejercicio 3: Gasto devengado y pago parcial](Unidad%2005/Ejercicio%2003/ejercicio-03.md)
+
 

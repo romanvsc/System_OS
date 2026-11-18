@@ -22,6 +22,16 @@ Si hay activo 12.000 y pasivo 5.000, el patrimonio neto es 7.000. Las cifras se 
 
 Los **resultados positivos** aumentan el patrimonio neto y los **resultados negativos** lo disminuyen, según su reconocimiento. En un esquema inicial simplificado, sin retiros ni otros movimientos del PN: `PN final = capital inicial + resultados positivos − resultados negativos`. La expresión dinámica correspondiente es `A = P + capital inicial + resultados positivos − resultados negativos`; no debe usarse sin ajustar si existen aportes, retiros u otros componentes adicionales.
 
+Para comprobar los saldos del mayor con los resultados separados, usamos la misma igualdad reordenada:
+
+```text
+Activo + Resultados negativos = Pasivo + Capital + Resultados positivos
+```
+
+Aquí el capital es el componente del patrimonio neto considerado en este ejemplo; si hay otros componentes, también se incorporan en el lado que corresponda. No se suma el resultado otra vez si se usa el patrimonio neto final, porque ya está incluido. Por ejemplo, activo 1.100 y resultados negativos 200 igualan pasivo 100 + capital 1.000 + resultados positivos 200: ambos lados suman 1.300. La igualdad estática equivalente es 1.100 = 100 + 1.000.
+
+Las cuentas regularizadoras se tratan según la cuenta que ajustan: por ejemplo, un interés positivo a devengar puede restar del activo y un interés negativo a devengar del pasivo, según el criterio adoptado. No son todavía resultados devengados.
+
 ## 3. Rueda operativa y variaciones
 
 La **rueda operativa** es una forma de describir el ciclo de operaciones: adquirir recursos, vender bienes o prestar servicios, cobrar y pagar; sus pasos y orden real dependen de la actividad.

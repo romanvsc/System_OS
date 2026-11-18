@@ -22,3 +22,5 @@ En cada asiento se identifican cuentas afectadas, se determina el efecto de la o
 Entre las operaciones a analizar están aportes de propietarios, compras y ventas, cobros y pagos, préstamos, gastos y deudas. La cuenta, el momento de reconocimiento y la medición dependen del hecho y de los datos aportados. Por ejemplo, en una compra al contado de mercaderías sin impuestos ni otros costos, aumenta mercaderías y disminuye caja.
 
 Tras registrar, el mayor permite acumular los débitos y créditos de cada cuenta y calcular su saldo. Para controlar un ejercicio, conciliá los saldos con la ecuación patrimonial, siempre considerando los resultados y demás componentes del patrimonio neto que correspondan.
+
+Para la comprobación con resultados abiertos: **Activo neto + resultados negativos = Pasivo neto + capital + resultados positivos**, agregando otros componentes del patrimonio neto cuando existan. El resultado no debe sumarse dos veces si ya se presenta dentro del patrimonio neto final. Las regularizadoras ajustan la cuenta correspondiente.
