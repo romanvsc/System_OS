@@ -1,4 +1,4 @@
-# Unidad 4 propuesta — Ejercicio 3: Cuenta regularizadora
+# Unidad 4 — Ejercicio 3: Cuenta regularizadora
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

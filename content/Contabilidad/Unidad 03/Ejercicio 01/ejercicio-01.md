@@ -1,4 +1,4 @@
-# Unidad 3 propuesta — Ejercicio 1: Calcular patrimonio neto
+# Unidad 3 — Ejercicio 1: Calcular patrimonio neto
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

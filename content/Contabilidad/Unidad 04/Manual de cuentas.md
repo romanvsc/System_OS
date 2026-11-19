@@ -1,199 +1,253 @@
-﻿# Manual de cuentas para estudiar Contabilidad
+﻿# Manual de cuentas
 
-> **Material didáctico original:** es una aproximación creada para estudiar, no el manual de la profesora ni un plan de cuentas oficial. Los nombres, la clasificación detallada, el tratamiento y la valuación pueden variar según la cátedra, la empresa y las normas aplicables. Cuando tengas el material de clase, tendrá prioridad para resolver sus ejercicios.
+> **Transcripción del manual de la cátedra** (fotos en `manual_cuentas/`). Se respeta su numeración, orden y redacción; solo se corrigieron erratas evidentes («Tajetas», «pagare»). Al final hay un **anexo** con cuentas que se explicaron en clase fuera del manual pero que se usan en los finales; ese anexo está redactado a partir de su uso en clase, no es texto del manual.
 
-## 1. Cómo usar este manual
+**Cómo leerlo:** *Se debita* = se anota en el **Debe** (izquierda). *Se acredita* = se anota en el **Haber** (derecha). *Saldo* = lo que representa la cuenta cuando se resta Debe − Haber.
 
-El **plan de cuentas** es una lista ordenada de cuentas. El **manual de cuentas** explica qué representa cada una, cuándo se debita, cuándo se acredita y cómo interpretar su saldo. Este manual combina ambos para facilitar el estudio.
+---
 
-Para analizar una operación:
+## 1.2.3. Análisis de cuentas
 
-1. Identificá el hecho: ¿qué se compra, vende, cobra, paga o devenga? ¿En qué fecha?
-2. Identificá las cuentas y su naturaleza. Preguntate si representan un bien o derecho, una obligación, patrimonio neto o resultado.
-3. Determiná qué aumenta y qué disminuye. Aplicá la regla de la cuenta, prestando atención a las regularizadoras.
-4. Registrá el asiento y verificá que la suma del Debe coincida con la del Haber. Después trasladá sus movimientos al mayor, calculá saldos y comprobá la igualdad. Un asiento equilibrado puede contener errores de interpretación.
+## 1.2.3.1. Cuentas patrimoniales
 
-**Debitar** significa registrar en el **Debe**, a la izquierda. **Acreditar** significa registrar en el **Haber**, a la derecha. No son sinónimos automáticos de pagar y cobrar.
+### 1.2.3.1.1. Patrimoniales del Activo
 
-## 2. Cuadro general
+#### Caja
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** el dinero en efectivo.
+- **Se debita:** cuando ingresa dinero en efectivo.
+- **Se acredita:** cuando egresa dinero en efectivo.
+- **Saldo deudor:** representa el dinero existente en Caja. Nunca puede tener saldo acreedor, pues no puede egresar más dinero del que ha ingresado.
 
-| Tipo de cuenta | Se debita | Se acredita | Saldo habitual |
+#### Banco «X» c/c
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** dinero, cheques u otros valores que depositamos en nuestra cuenta corriente, cuyo retiro se efectúa mediante la emisión de cheques de nuestra firma, retiros por ventanilla o extracciones por cajero automático.
+- **Se debita:** cuando depositamos dinero, cheques u otros valores.
+- **Se acredita:** cuando libramos un cheque, efectuamos un pago o extracción por cajero, débito automático, internet u otras formas de pago electrónico, o cuando efectuamos retiros en el Banco por ventanilla. También por las notas de débito bancarias por comisiones o gastos que el banco nos cobra.
+- **Saldo deudor:** representa el dinero depositado en el Banco a nuestro favor.
+
+#### Deudores por ventas
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** a las personas que nos deben de palabra, dinero u otros valores (fiado) por ventas a plazo (en c/c sin documentar). En caso de no ser por ventas se utiliza **«Deudores Varios»**. Ejemplo: préstamos de dinero a terceros.
+- **Se debita:** cuando nos deben dinero por la venta en cuenta corriente de mercaderías o servicios.
+- **Se acredita:** cuando cobramos total o parcialmente los importes que nos deben en c/c o nos documentan lo adeudado.
+- **Saldo deudor:** representa el importe que nos deben por ventas de mercaderías en cuenta corriente.
+
+#### Documentos a cobrar
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** pagarés que hemos recibido de terceros y que aún no se cobraron por no haberse producido su vencimiento.
+- **Se debita:** cuando recibimos un pagaré de terceros (librado o endosado a nuestro favor).
+- **Se acredita:** cuando lo cobramos o endosamos a favor de otra persona, o es renovado por otro documento.
+- **Saldo deudor:** representa el importe de documentos a cobrar, aún no vencidos.
+
+#### Mercaderías
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los bienes que el comerciante posee para su venta.
+- **Se debita:** cuando compramos mercaderías.
+- **Se acredita:** cuando registramos el costo de las mercaderías vendidas.
+- **Saldo deudor:** representa el valor en dinero de las mercaderías en existencia.
+
+#### Inmuebles
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** las propiedades, casas, locales, terrenos, etc., que pertenecen al comerciante o empresa.
+- **Se debita:** cuando compramos dichos bienes al precio de costo (valores de compra más gastos que ocasionó la operación).
+- **Se acredita:** cuando lo vendemos o se destruyen, dándolos de baja por su precio de costo.
+- **Saldo deudor:** representa el valor de los inmuebles que posee el comerciante o empresa.
+
+#### Equipos de computación
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** las computadoras u otros periféricos (impresora, scanner, monitor, teclado, mouse, grabadora de CD, módem, etc.) que el comerciante o empresa utiliza para poder desarrollar su actividad.
+- **Se debita:** cuando compramos dichos bienes por su valor de compra.
+- **Se acredita:** cuando los vendemos o damos de baja.
+- **Saldo deudor:** representa el valor de los equipos de computación en existencia.
+
+#### Rodados
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los automotores, camiones, vehículos, ciclomotores, etc., que pertenecen a nuestro negocio o empresa, los cuales utilizamos en la actividad comercial.
+- **Se debita:** cuando los compramos, por el valor de costo.
+- **Se acredita:** cuando lo vendemos o por destrucción.
+- **Saldo deudor:** representa el valor de los rodados en existencia.
+
+#### Muebles y útiles
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los muebles y bienes que poseemos y utilizamos para poder desenvolvernos en la empresa. Por ej.: escritorios, mostradores, sillas, fotocopiadoras, fax, teléfonos, proyectores, teléfonos celulares, etc.
+- **Se debita:** cuando compramos dichos bienes por su valor de compra.
+- **Se acredita:** cuando los vendemos o damos de baja.
+- **Saldo deudor:** representa el valor de los bienes en existencia.
+
+#### Maquinarias
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** las máquinas que el comerciante o empresa utiliza para fabricar o producir otros bienes, por ej.: tornos, pulidoras, guillotinas, impresoras, etc.
+- **Se debita:** cuando compramos esos bienes, por su valor de compra.
+- **Se acredita:** cuando los vendemos o damos de baja.
+- **Saldo deudor:** representa el valor de las maquinarias en existencia.
+
+#### Instalaciones
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los bienes adosados al inmueble y que utilizamos para desenvolvernos en la empresa, por ej.: estanterías, vidrieras, cartel luminoso, centrales telefónicas, alarmas, equipos de refrigeración, etc.
+- **Se debita:** cuando compramos dichos bienes por su valor de compra.
+- **Se acredita:** cuando los vendemos o damos de baja.
+- **Saldo deudor:** representa el valor de las instalaciones en existencia.
+
+#### Valores a depositar
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los cheques recibidos de terceros o valores equivalentes aún no depositados para su cobro. **En caso de ser cheques con fecha de pago diferido se utiliza la cuenta «Valores Diferidos a Depositar».**
+- **Se debita:** cuando ingresan cheques recibidos de terceros o valores equivalentes.
+- **Se acredita:** cuando endosamos cheques de terceros o valores equivalentes a una entidad bancaria o a terceros.
+- **Saldo deudor:** representa los cheques de terceros o valores equivalentes en nuestro poder.
+
+#### Tarjetas de crédito «XX»
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los cupones o comprobantes de las tarjetas de crédito en nuestro poder, que no se cobraron hasta la fecha.
+- **Se debita:** al efectuar ventas con tarjetas de crédito.
+- **Se acredita:** cuando depositamos los cupones para su cobro o recibimos la información bancaria que se acredita el importe de la liquidación en nuestra cta. cte. o caja de ahorro bancaria.
+- **Saldo deudor:** representa los cupones provenientes de las ventas realizadas a terceros con tarjeta de crédito.
+
+#### Materias primas
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los bienes destinados a la fabricación de mercaderías.
+- **Se debita:** por las compras realizadas.
+- **Se acredita:** por el monto que se utiliza para elaborar el producto.
+- **Saldo deudor:** representa el valor de las materias primas en existencia.
+
+### 1.2.3.1.2. Patrimoniales del Pasivo
+
+#### Acreedores varios
+- **Clasificación:** Patrimonial del Pasivo.
+- **Representa:** a las personas a quienes debemos dinero de palabra y otros valores (fiado).
+- **Se acredita:** cuando quedamos debiendo por compras (**no mercaderías**) en c/c sin documentar o préstamos recibidos.
+- **Se debita:** cuando pagamos o documentamos la deuda.
+- **Saldo acreedor:** representa el importe de la deuda que tenemos.
+
+#### Proveedores
+- **Clasificación:** Patrimonial del Pasivo.
+- **Representa:** a las personas a quienes debemos dinero en cuenta corriente por habernos vendido **mercaderías**. También podremos incluir a quienes compramos otros bienes en forma «habitual».
+- **Se acredita:** cuando debemos mercaderías por compras efectuadas en c/c.
+- **Se debita:** cuando pagamos o documentamos la deuda.
+- **Saldo acreedor:** representa el importe de la deuda por compra de mercaderías en cuenta corriente.
+
+#### Documentos a pagar
+- **Clasificación:** Patrimonial del Pasivo.
+- **Representa:** los pagarés de nuestra firma entregados a terceros y que debemos pagar cuando llegue su vencimiento. También denominada **«Obligaciones a pagar»**.
+- **Se acredita:** cuando firmamos un pagaré.
+- **Se debita:** cuando pagamos o renovamos los documentos.
+- **Saldo acreedor:** representa el importe de los pagarés que debemos pagar aún no vencidos.
+
+#### Valores diferidos a pagar
+- **Clasificación:** Patrimonial del Pasivo.
+- **Representa:** los cheques emitidos de propia firma con fecha de pago diferida y que debemos tener el dinero depositado en el banco cuando llegue su vencimiento.
+- **Se acredita:** cuando firmamos y entregamos un cheque diferido.
+- **Se debita:** cuando el banco nos informa que el cheque se pagó o recibimos el extracto bancario y se debita el importe.
+- **Saldo acreedor:** representa los cheques diferidos emitidos de propia firma que no vencieron a la fecha o no depositados.
+
+### 1.2.3.1.3. Patrimonio Neto
+
+#### Capital
+- **Clasificación:** Patrimonio Neto.
+- **Representa:** el Patrimonio Neto inicial del comerciante o empresa. Se origina de la diferencia entre el Activo y el Pasivo.
+- **Se acredita:** por el importe de los aportes activos menos los aportes pasivos. Cuando el comerciante decide aumentar el capital mediante nuevos aportes o con la ganancia del ejercicio.
+- **Se debita:** por la disminución del capital o por pérdidas sufridas.
+- **Saldo acreedor:** representa el patrimonio neto del comerciante al iniciar el ejercicio económico.
+
+## 1.2.3.2. Cuentas de resultados
+
+Todas las cuentas de resultado **se cierran a fin del ejercicio**: su saldo «se refunde» en la cuenta **Pérdidas y Ganancias**.
+
+### 1.2.3.2.1. Ganancias: resultados positivos
+
+| Cuenta | Representa | Se acredita | Se debita | Saldo acreedor |
+| --- | --- | --- | --- | --- |
+| **Ventas** | El importe de las mercaderías que vendimos o servicios prestados (ej.: honorarios profesionales). | Por las ventas efectuadas de bienes o servicios prestados. | Cuando nos devuelven mercaderías que hemos vendido y cuando su saldo se refunde en Pérdidas y Ganancias al fin del ejercicio. | El importe de las ventas realizadas de bienes o servicios prestados durante el ejercicio. |
+| **Intereses ganados** | El recargo que le cobramos a nuestros clientes o deudores por los pagos fuera de término o préstamos de dinero otorgados. También: Intereses obtenidos o cobrados. | Cuando cobramos el interés. | Cuando su saldo se refunde en Pérdidas y Ganancias al fin del ejercicio. | La ganancia por intereses a nuestro favor. |
+| **Alquileres ganados** | El importe que cobramos a terceros por usar propiedades de nuestro patrimonio. También: Alquileres obtenidos o cobrados. | Cuando se cobra el alquiler. | A fin del ejercicio, al refundirse en Pérdidas y Ganancias. | La ganancia por alquileres a nuestro favor. |
+| **Descuentos obtenidos** | La rebaja en el precio de las mercaderías o bienes que nos hacen nuestros acreedores o proveedores. También: Descuentos ganados. | Cuando nos otorgan el descuento. | A fin del ejercicio, al refundirse en Pérdidas y Ganancias. | La ganancia por el descuento obtenido. |
+| **Comisiones ganadas** | La retribución que corresponde por servicios prestados en operaciones de compraventa a una persona o empresa. También: Comisiones obtenidas o cobradas. | Cuando se cobra la comisión. | A fin del ejercicio, al refundirse en Pérdidas y Ganancias. | La ganancia obtenida por la comisión a nuestro favor. |
+
+### 1.2.3.2.2. Pérdidas: resultados negativos
+
+*(En la hoja original este título figura también como «1.2.3.2.1»; se numeró 1.2.3.2.2 para no repetir.)*
+
+En todas estas cuentas: **se acredita** a fin del ejercicio, cuando su saldo se refunde en la cuenta Pérdidas y Ganancias; **saldo deudor**.
+
+| Cuenta | Representa | Se debita | Saldo deudor |
 | --- | --- | --- | --- |
-| Activo | Cuando aumenta | Cuando disminuye | Deudor |
-| Pasivo | Cuando disminuye | Cuando aumenta | Acreedor |
-| Patrimonio neto: cuentas de saldo acreedor | Cuando disminuyen | Cuando aumentan | Acreedor |
-| Resultado negativo | Cuando se reconoce o aumenta una pérdida o gasto | Por corrección, anulación o cierre | Deudor |
-| Resultado positivo | Por corrección, anulación o cierre | Cuando se reconoce o aumenta un ingreso o ganancia | Acreedor |
+| **Costo de mercaderías vendidas** | El precio que le costó (valor de compra + gastos) al comerciante la mercadería que compró o fabricó y luego vendió. También: Costo de ventas. | Por el precio de costo de las mercaderías vendidas. | La pérdida sufrida por el costo de las mercaderías que se vendieron. |
+| **Impuestos** | La pérdida de dinero a favor del Estado, por gravámenes que le corresponden pagar al comerciante o empresa. | Cuando se paga el impuesto. | La pérdida sufrida por los impuestos pagados. |
+| **Alquileres perdidos** | El importe que pagamos por el uso de inmuebles que no son de nuestra propiedad. También: Alquileres pagados o cedidos. | Cuando se paga el alquiler. | La pérdida sufrida por los alquileres pagados. |
+| **Intereses perdidos** | El recargo que nos cobran nuestros proveedores, acreedores o bancos por los pagos fuera de término o préstamos de dinero solicitado. También: Intereses pagados o cedidos. | Cuando se paga el interés. | La pérdida sufrida por los intereses pagados. |
+| **Sueldos y jornales** | Los haberes abonados a los empleados u operarios por su trabajo. | Cuando se pagan los sueldos. | La pérdida sufrida por los sueldos y jornales pagados. |
+| **Gastos generales** | Los gastos de bajo importe, habituales en todo comercio. Ej.: papeles, artículos de limpieza, luz. En caso de que los servicios correspondan a importes elevados, se aconseja individualizarlos en una cuenta propia. | Cuando se producen dichos gastos. | La pérdida sufrida por los gastos pagados. |
+| **Fletes y acarreos** | El importe que abonamos por el transporte (flete), carga y descarga (acarreo) de mercaderías o bienes a una empresa de transporte. | Cuando se paga el flete. | La pérdida sufrida por los fletes pagados. |
+| **Comisiones perdidas** | La retribución abonada a vendedores, comisionistas, etc., por tareas que hemos encargado. También: Comisiones pagadas o cedidas. | Cuando se paga la comisión. | La pérdida sufrida por las comisiones pagadas. |
+| **Descuentos cedidos** | La rebaja en el precio de las mercaderías que nosotros efectuamos a nuestros deudores o clientes. También: Descuentos otorgados, perdidos o negativos. | Cuando concedemos el descuento. | La pérdida sufrida por el descuento otorgado. |
+| **Publicidad perdida** | El precio abonado por la promoción de nuestros productos a un medio publicitario (radial, televisiva, gráfica y otros). | Cuando se pagan los gastos de publicidad. | La pérdida sufrida por la publicidad perdida. |
+| **Seguros** | La prima (importe) que se abona en concepto de seguros a la compañía aseguradora. | Cuando se pagan los gastos de seguro. | La pérdida sufrida por los seguros pagados. |
 
-Estas son reglas generales. Una cuenta puede tener un saldo diferente por sus movimientos, errores o circunstancias particulares. Las **regularizadoras** suelen tener saldo contrario al de la cuenta o rubro que ajustan. Algunas cuentas del patrimonio neto pueden tener saldo deudor. Las cuentas de orden se tratan por separado.
+---
 
-**Saldo deudor**: total del Debe mayor que total del Haber. **Saldo acreedor**: total del Haber mayor que total del Debe. **Cuenta saldada**: ambos totales son iguales.
+## Anexo: cuentas explicadas en clase fuera del manual
 
-## 3. Cuentas de activo
+> No figuran en las hojas del manual, pero la profesora las explicó y se usan en el final. La redacción es **propia**, en el mismo formato del manual, a partir de cómo se usan en los ejercicios.
 
-Representan, en términos introductorios, bienes y derechos de la entidad. En general su saldo es deudor. La agrupación por rubro es orientativa; algunas clasificaciones dependen de las características concretas de la partida.
+#### Acreedores comerciales
+- **Clasificación:** Patrimonial del Pasivo.
+- **Representa:** deudas comerciales en cuenta corriente con acreedores (aparece en el final como saldo aportado al constituir la empresa).
+- **Se acredita:** cuando nace o aumenta la deuda (por ejemplo, al recibirla como aporte pasivo).
+- **Se debita:** cuando la pagamos o documentamos.
+- **Saldo acreedor:** lo que todavía debemos a esos acreedores.
 
-| Cuenta y significado | Se debita cuando… | Se acredita cuando… | Saldo habitual |
-| --- | --- | --- | --- |
-| **Caja:** dinero en efectivo disponible. | Ingresa efectivo, por ejemplo por una cobranza. | Sale efectivo, por ejemplo por un pago. | Deudor: efectivo disponible. |
-| **Fondo fijo:** efectivo asignado a pagos menores. | Se constituye o incrementa el fondo; también al reponerlo si se utilizó el método de registrar cada gasto contra el fondo. | Se reduce o cancela, o se registran gastos pagados con él bajo ese método. | Deudor: saldo contable del fondo. |
-| **Banco cuenta corriente:** dinero disponible en una cuenta bancaria. | Se acredita un depósito o transferencia recibida. | Se realiza un pago o transferencia, o se reconoce un cargo bancario. | Deudor: disponibilidad. Un sobregiro requiere análisis y puede representar un pasivo. |
-| **Valores a depositar:** valores recibidos, como cheques de cobro inmediato, aún no depositados. | Se reciben valores admitidos en esta cuenta. | Se depositan, entregan o dejan de estar en cartera. | Deudor: valores pendientes. |
-| **Valores diferidos a cobrar:** cheques u otros valores diferidos recibidos, bajo esta denominación didáctica. | Se recibe un valor diferido. | Se cobra, deposita al vencimiento o transfiere, según corresponda. | Deudor: valores diferidos pendientes. |
-| **Plazo fijo:** capital colocado en una inversión a plazo. | Se constituye o amplía la inversión. | Se cobra, cancela o reclasifica el capital. | Deudor: capital pendiente. |
-| **Intereses de plazo fijo a cobrar:** interés ya devengado pendiente de cobro. | Se reconoce el interés devengado a cobrar. | Se cobra o deja de ser exigible. | Deudor: interés pendiente. |
-| **Deudores por ventas:** créditos comerciales por ventas a cuenta corriente. | Se vende a crédito y se genera el derecho a cobrar. | El cliente paga, devuelve mercadería o disminuye su deuda. | Deudor: crédito pendiente. |
-| **Documentos a cobrar:** derechos documentados, por ejemplo en pagarés recibidos. | Se recibe o genera un documento a favor. | Se cobra, cancela o sustituye el documento. | Deudor: documentos pendientes. |
-| **Otros deudores:** derechos a cobrar que no se incluyen en deudores por ventas. | Nace un crédito de esa naturaleza. | Se cobra o cancela. | Deudor: crédito pendiente. |
-| **Anticipos a proveedores:** importes adelantados por bienes o servicios a recibir. | Se entrega el anticipo. | Se aplica a la compra, se devuelve o cancela. | Deudor: anticipo pendiente de aplicación. |
-| **IVA crédito fiscal:** importe de IVA de compras reconocible como crédito bajo el supuesto aplicable. | Se reconoce en una compra o gasto. | Se compensa, ajusta o cancela según corresponda. | Deudor: crédito pendiente. Su cómputo depende del régimen y la operación. |
-| **Mercaderías:** bienes adquiridos para vender. | Se incorporan bienes para la venta, según el sistema de registración adoptado. | Se reconoce la salida, devolución o baja de bienes. | Deudor: existencias registradas. |
-| **Materias primas:** materiales destinados a producción. | Se incorporan materiales. | Se consumen, transfieren o dan de baja. | Deudor: materiales registrados. |
-| **Productos terminados:** bienes ya producidos destinados a la venta. | Ingresa producción terminada. | Se reconoce su salida o baja. | Deudor: productos disponibles registrados. |
-| **Muebles y útiles:** mobiliario y equipamiento de uso. | Se adquieren o incorporan bienes de esta clase. | Se venden, retiran o dan de baja. | Deudor: importe registrado de bienes en uso antes de regularizaciones. |
-| **Equipos de computación:** equipos destinados al uso. | Se adquieren o incorporan equipos. | Se venden, retiran o dan de baja. | Deudor: importe registrado antes de regularizaciones. |
-| **Rodados:** vehículos destinados al uso. | Se adquieren o incorporan vehículos. | Se venden, retiran o dan de baja. | Deudor: importe registrado antes de regularizaciones. |
-| **Inmuebles:** terrenos y edificios registrados para el uso u otra finalidad según el caso. | Se adquieren o incorporan. | Se venden o dan de baja. | Deudor: importe registrado antes de regularizaciones. |
-| **Seguros pagados por adelantado:** parte de un seguro ya pagada que corresponde a períodos futuros, bajo este criterio. | Se paga por anticipado y se reconoce el derecho o cobertura pendiente. | Transcurre la cobertura y se reconoce el gasto, o se cancela. | Deudor: cobertura pendiente. |
+#### Valores diferidos a depositar
+- **Clasificación:** Patrimonial del Activo (la nombra el manual dentro de *Valores a depositar*).
+- **Representa:** cheques de terceros con fecha de pago diferida, en nuestro poder.
+- **Se debita:** cuando recibimos un cheque de pago diferido.
+- **Se acredita:** cuando lo depositamos al vencimiento o lo endosamos a un tercero.
+- **Saldo deudor:** cheques diferidos de terceros aún no depositados.
 
-**No confundas:** un préstamo otorgado puede generar un derecho a cobrar; uno recibido genera una obligación. Un cheque recibido no necesariamente es efectivo: su cuenta depende del tipo de cheque y del plan utilizado. Un pago por adelantado no es automáticamente gasto: depende de qué se recibió y del período al que corresponde.
+#### Fondo fijo
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** una suma de efectivo separada de Caja para pagar gastos menores.
+- **Se debita:** al crear el fondo y al reponerlo.
+- **Se acredita:** cuando se pagan gastos con él.
+- **Saldo deudor:** el efectivo del fondo. Después de reponerlo vuelve a su importe original.
 
-## 4. Cuentas de pasivo
+#### Plazo fijo
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** dinero colocado en el banco a un plazo determinado para ganar intereses.
+- **Se debita:** al constituir el plazo fijo.
+- **Se acredita:** al vencimiento, cuando se cobra o renueva.
+- **Saldo deudor:** el capital invertido.
 
-Representan obligaciones de la entidad. Su saldo habitual es acreedor.
+#### Intereses de plazo fijo a cobrar
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** los intereses del plazo fijo ya ganados (devengados) que todavía no se cobraron.
+- **Se debita:** al devengar el interés (contra Intereses ganados).
+- **Se acredita:** cuando se cobran.
+- **Saldo deudor:** intereses ganados pendientes de cobro.
 
-| Cuenta y significado | Se debita cuando… | Se acredita cuando… | Saldo habitual |
-| --- | --- | --- | --- |
-| **Proveedores:** deudas comerciales por compras a crédito, según el plan usado. | Se paga, devuelve mercadería o disminuye la deuda. | Se compra a crédito y nace o aumenta la deuda. | Acreedor: importe pendiente. |
-| **Acreedores comerciales:** obligaciones comerciales identificadas con esta denominación. | Se cancela o reduce la obligación. | Se genera o incrementa. | Acreedor: importe pendiente. Evitá duplicarla con Proveedores si el plan las usa para la misma deuda. |
-| **Documentos a pagar:** obligaciones documentadas, por ejemplo en pagarés firmados. | Se paga o cancela el documento. | Se firma o genera una obligación documentada. | Acreedor: documentos pendientes. |
-| **Préstamos bancarios a pagar:** obligación por financiación recibida. | Se amortiza o cancela el capital adeudado. | Se recibe financiación que genera la obligación. | Acreedor: capital pendiente, según el criterio de registro. |
-| **Alquileres a pagar:** alquiler devengado aún no pagado. | Se paga o cancela la deuda. | Se reconoce el alquiler devengado pendiente. | Acreedor: alquiler pendiente. |
-| **Sueldos a pagar:** remuneraciones devengadas aún no canceladas. | Se pagan o cancelan. | Se reconoce la obligación por remuneraciones devengadas. | Acreedor: deuda pendiente. |
-| **Cargas sociales a pagar:** obligaciones derivadas de cargas laborales, según el régimen aplicable. | Se pagan o compensan válidamente. | Se devengan o determinan las obligaciones. | Acreedor: deuda pendiente. |
-| **Impuestos a pagar:** tributos determinados y pendientes de cancelación. | Se pagan, compensan o ajustan. | Se reconoce la obligación tributaria. | Acreedor: deuda pendiente. |
-| **IVA débito fiscal:** IVA generado en ventas gravadas, bajo el supuesto aplicable. | Se compensa, ajusta o cancela según corresponda. | Se reconoce en una venta u operación alcanzada. | Acreedor: débito pendiente de liquidación. |
-| **Anticipos de clientes:** importes cobrados por una prestación o entrega aún pendiente, cuando constituyen una obligación. | Se cumple la prestación o se devuelve el anticipo. | Se recibe el anticipo y nace la obligación. | Acreedor: obligación pendiente. |
-| **Intereses a pagar:** intereses devengados y aún no abonados. | Se pagan o cancelan. | Se devenga el interés y nace la obligación. | Acreedor: interés pendiente. |
+#### IVA crédito fiscal
+- **Clasificación:** Patrimonial del Activo.
+- **Representa:** el IVA que nos facturan en las compras y que podemos descontar del IVA de las ventas.
+- **Se debita:** al comprar (por el IVA facturado).
+- **Se acredita:** al liquidar el IVA del período.
+- **Saldo deudor:** IVA a nuestro favor.
 
-**IVA:** crédito fiscal y débito fiscal son nombres frecuentes en ejercicios. Su reconocimiento, compensación, alícuota y efecto dependen de la jurisdicción, el período, la condición de las partes y la operación. No toda compra genera crédito computable ni toda venta genera débito fiscal. No se fija una tasa universal en este manual.
+#### IVA débito fiscal
+- **Clasificación:** Patrimonial del Pasivo.
+- **Representa:** el IVA que cobramos en nuestras ventas y que debemos al fisco.
+- **Se acredita:** al vender (por el IVA facturado).
+- **Se debita:** al liquidar el IVA del período.
+- **Saldo acreedor:** IVA que debemos.
 
-## 5. Patrimonio neto
+#### Intereses negativos a devengar
+- **Clasificación:** Regularizadora del Pasivo.
+- **Representa:** los intereses incluidos en una compra financiada que todavía no transcurrieron.
+- **Se debita:** al registrar la compra financiada (se separa el interés del precio de contado).
+- **Se acredita:** a medida que se devengan, pasando a **Intereses perdidos**.
+- **Saldo deudor:** intereses pendientes de devengar. Se **resta** del pasivo (Proveedores).
 
-Expresa la participación residual en el activo una vez deducido el pasivo. El capital es uno de sus componentes; no es necesariamente todo el patrimonio neto. Las denominaciones y el tratamiento de resultados acumulados dependen de la forma jurídica y el marco aplicable.
-
-| Cuenta y significado | Se debita cuando… | Se acredita cuando… | Saldo habitual |
-| --- | --- | --- | --- |
-| **Capital:** aportes reconocidos como capital. | Se registra una reducción de capital válida. | Se reconoce la constitución o aumento de capital. | Acreedor: capital registrado. |
-| **Aportes irrevocables u otros aportes:** aportes clasificados como patrimonio neto cuando cumplen las condiciones aplicables. | Se capitalizan, devuelven o reclasifican según corresponda. | Se reconocen los aportes bajo el criterio aplicable. | Habitualmente acreedor; su clasificación requiere analizar las condiciones. |
-| **Reservas:** resultados u otros importes asignados a fines específicos, según corresponda. | Se desafectan o aplican conforme a la decisión y reglas aplicables. | Se constituyen o incrementan. | Acreedor: importe reservado. |
-| **Resultados no asignados:** resultados acumulados pendientes de asignación o absorción. | Se reconoce una pérdida o se dispone su aplicación, según el asiento. | Se reconoce una ganancia o se absorbe una pérdida, según el asiento. | Puede ser acreedor o deudor, según el resultado acumulado. |
-| **Retiros de propietarios:** cuenta transitoria que puede representar retiros en un esquema didáctico. | Se registra un retiro imputable al propietario. | Se regulariza o cierra contra la cuenta que corresponda. | Deudor; reduce el patrimonio neto cuando corresponde y no es un gasto de la entidad. |
-
-## 6. Resultados negativos
-
-En general representan gastos o pérdidas reconocidos en el período. Sus saldos habituales son deudores. Acreditar estas cuentas puede disminuir o anular el importe por correcciones, ajustes o cierre; el asiento concreto depende del plan. **Un gasto devengado no exige que ya se haya pagado.**
-
-| Cuenta y significado | Se debita cuando… | Se acredita cuando… | Saldo habitual |
-| --- | --- | --- | --- |
-| **Costo de mercaderías vendidas:** costo de los bienes vendidos. | Se reconoce el costo de la mercadería entregada. | Se corrige, revierte o cierra el resultado. | Deudor: costo reconocido. |
-| **Alquileres perdidos:** gasto de alquiler correspondiente al período. | Se devenga el alquiler. | Se corrige, revierte o cierra. | Deudor: gasto reconocido. |
-| **Sueldos y jornales:** remuneraciones reconocidas como gasto. | Se devengan las remuneraciones. | Se corrigen, revierten o cierran. | Deudor: gasto reconocido. |
-| **Cargas sociales:** cargas patronales reconocidas como gasto según el caso. | Se devengan las cargas correspondientes. | Se corrigen, revierten o cierran. | Deudor: gasto reconocido. |
-| **Gastos de librería:** artículos o consumos de librería tratados como gasto bajo el supuesto del ejercicio. | Se reconoce su consumo o gasto. | Se corrige, revierte o cierra. | Deudor: gasto reconocido. |
-| **Servicios:** consumos devengados de energía, agua, comunicaciones u otros servicios. | Se reconoce el gasto del período. | Se corrige, revierte o cierra. | Deudor: gasto reconocido. |
-| **Seguros perdidos:** parte del seguro devengada como gasto. | Transcurre la cobertura del período o se reconoce el gasto correspondiente. | Se corrige, revierte o cierra. | Deudor: gasto reconocido. |
-| **Intereses perdidos:** intereses devengados por financiación u otras obligaciones. | Se reconoce el interés devengado. | Se corrige, revierte o cierra. | Deudor: interés reconocido. |
-| **Comisiones bancarias:** cargos bancarios que corresponden a gasto. | Se reconoce la comisión. | Se corrige, revierte o cierra. | Deudor: gasto reconocido. |
-| **Depreciaciones o amortizaciones del ejercicio:** consumo o pérdida de potencial de uso reconocido para bienes depreciables. | Se reconoce el cargo del período. | Se corrige, revierte o cierra. | Deudor: cargo reconocido. |
-| **Deudores incobrables o cargo por incobrabilidad:** pérdida estimada o reconocida por créditos, según el criterio. | Se reconoce la pérdida o estimación correspondiente. | Se corrige, revierte o cierra. | Deudor: cargo reconocido. |
-| **Descuentos concedidos:** descuentos reconocidos como resultado negativo si así lo establece el plan. | Se reconoce el descuento concedido. | Se corrige, revierte o cierra. | Deudor. Algunos descuentos ajustan la venta o el costo en vez de registrarse aquí. |
-
-## 7. Resultados positivos
-
-Representan ingresos o ganancias reconocidos en el período. Sus saldos habituales son acreedores. Debitar estas cuentas puede disminuir o anular el importe por correcciones, ajustes o cierre. **Un ingreso devengado no exige que ya se haya cobrado.**
-
-| Cuenta y significado | Se debita cuando… | Se acredita cuando… | Saldo habitual |
-| --- | --- | --- | --- |
-| **Ventas:** ingresos por venta de mercaderías bajo el criterio aplicado. | Se corrige, revierte o cierra el ingreso. | Se reconoce la venta. | Acreedor: ventas reconocidas. |
-| **Ingresos por servicios:** servicios prestados reconocidos como ingreso. | Se corrige, revierte o cierra. | Se reconoce el servicio devengado. | Acreedor: ingresos reconocidos. |
-| **Intereses ganados:** intereses devengados a favor. | Se corrige, revierte o cierra. | Se reconoce el interés devengado. | Acreedor: intereses reconocidos. |
-| **Alquileres ganados:** ingresos devengados por alquileres otorgados. | Se corrige, revierte o cierra. | Se reconoce el alquiler del período. | Acreedor: ingresos reconocidos. |
-| **Comisiones ganadas:** ingresos devengados por comisiones. | Se corrige, revierte o cierra. | Se reconoce la comisión devengada. | Acreedor: ingresos reconocidos. |
-| **Descuentos obtenidos:** descuentos reconocidos como resultado positivo si así lo establece el plan. | Se corrige, revierte o cierra. | Se reconoce el descuento obtenido. | Acreedor. Algunos descuentos ajustan la compra o el costo en vez de registrarse aquí. |
-| **Ganancia por venta de bienes de uso:** diferencia positiva cuando el criterio exige reconocerla por separado. | Se corrige, revierte o cierra. | Se reconoce una ganancia en la baja o venta. | Acreedor: ganancia reconocida. |
-
-## 8. Cuentas regularizadoras
-
-Una regularizadora ajusta otra cuenta o rubro; se interpreta junto con la partida relacionada. Su saldo habitual suele ser contrario al de dicha partida. No se la debe clasificar solo por contener palabras como «negativos» o «positivos» en su nombre.
-
-| Cuenta y qué ajusta | Se debita cuando… | Se acredita cuando… | Saldo y presentación habitual |
-| --- | --- | --- | --- |
-| **Intereses positivos a devengar:** ajusta un crédito bruto por ventas financiadas, en el criterio didáctico usado en los finales. | Se devenga la porción que pasa a Intereses ganados o se ajusta la operación. | Se registra el componente financiero positivo pendiente al originar el crédito. | Acreedor; reduce el activo relacionado. No es todavía resultado positivo devengado. |
-| **Intereses negativos a devengar:** ajusta una deuda bruta por compras financiadas, en el criterio didáctico usado en los finales. | Se registra el componente financiero negativo pendiente al originar la deuda. | Se devenga la porción que pasa a Intereses perdidos o se ajusta la operación. | Deudor; reduce el pasivo relacionado. No es todavía resultado negativo devengado. |
-| **Depreciación acumulada:** ajusta el valor contable de un bien depreciable. | Se da de baja la depreciación asociada a un bien retirado o se ajusta. | Se acumula la depreciación reconocida. | Acreedor; se resta del importe registrado del bien. |
-| **Previsión para incobrables:** ajuste estimado de créditos cuando se aplica este criterio. | Se utiliza o reduce la previsión, según corresponda. | Se constituye o aumenta la estimación. | Acreedor; reduce los créditos relacionados. |
-
-Ejemplo: deudores por ventas brutos 10.000 y previsión para incobrables 300 → créditos netos 9.700. Una estimación no equivale necesariamente a una pérdida definitiva de un cliente específico.
-
-Los nombres y la presentación de intereses a devengar del cuadro siguen el **supuesto de los ejercicios de esta carpeta**. Otras cátedras o marcos pueden usar denominaciones y tratamientos distintos. La segregación, medición y devengamiento se determinan con los datos y criterios del ejercicio.
-
-## 9. Cuentas de orden
-
-Se usan en algunos sistemas para controlar hechos, bienes de terceros, garantías u otras situaciones que se quieren seguir sin reconocer automáticamente un activo, pasivo o resultado. Se registran con su **contracuenta de orden** según el sistema adoptado. Debe, Haber y saldo dependen de la pareja de cuentas; no se aplica sin más la regla del activo o pasivo.
-
-Ejemplo conceptual: mercaderías recibidas de terceros en custodia y su contracuenta de orden. El nombre, importe y sentido del registro dependen del manual aplicable. Que se controlen no significa por sí solo que sean propiedad de la entidad.
-
-## 10. Del diario al mayor y comprobación
-
-Ejemplo didáctico original, sin impuestos: una empresa recibe un aporte en efectivo de 1.000; compra mercaderías a crédito por 300; y paga un alquiler de 100 correspondiente al período.
-
-| Operación y cuenta | Debe | Haber |
-| --- | ---: | ---: |
-| 1. Caja | 1.000 | — |
-| 1. Capital | — | 1.000 |
-| 2. Mercaderías | 300 | — |
-| 2. Proveedores | — | 300 |
-| 3. Alquileres perdidos | 100 | — |
-| 3. Caja | — | 100 |
-| **Totales** | **1.400** | **1.400** |
-
-Cada asiento también equilibra individualmente: 1.000, 300 y 100. Trasladamos cada importe a su cuenta de mayor:
-
-| Cuenta | Movimientos al Debe | Movimientos al Haber | Saldo |
-| --- | --- | --- | --- |
-| Caja | 1.000 | 100 | 900 deudor |
-| Mercaderías | 300 | — | 300 deudor |
-| Proveedores | — | 300 | 300 acreedor |
-| Capital | — | 1.000 | 1.000 acreedor |
-| Alquileres perdidos | 100 | — | 100 deudor |
-
-Activo = Caja 900 + Mercaderías 300 = 1.200. Resultado negativo = 100. Pasivo = 300. Capital = 1.000. Resultado positivo = 0.
-
-```text
-Activo + Resultados negativos = Pasivo + Capital + Resultados positivos
-1.200  + 100                  = 300    + 1.000   + 0
-1.300                          = 1.300
-```
-
-En este ejemplo, sin otros movimientos patrimoniales, el patrimonio neto final es capital 1.000 menos pérdida 100 = 900. La forma estática equivalente es activo 1.200 = pasivo 300 + patrimonio neto final 900. **No sumes otra vez los resultados si ya están incorporados en el patrimonio neto final.** Si existen otros componentes patrimoniales, incluilos con el signo que corresponda. Las regularizadoras se aplican al activo o pasivo relacionado para obtener los importes netos; no se incluyen otra vez como resultados pendientes.
-
-## 11. Situaciones que suelen confundirse
-
-- **Compra de mercaderías y costo de venta:** comprar incorpora existencias; el costo de mercaderías vendidas se reconoce al vender o según el sistema adoptado. No todo pago por mercaderías es gasto inmediato.
-- **Venta y cobro:** una venta a crédito reconoce un derecho a cobrar; el cobro posterior reduce ese derecho. No vuelve a generar una venta por el mismo importe.
-- **Gasto y pago:** un alquiler puede devengarse antes de pagarse. El pago posterior reduce la deuda; no vuelve a reconocer el mismo gasto.
-- **Préstamo recibido e ingreso:** recibir capital prestado aumenta fondos y una obligación; no es por sí solo un resultado positivo. Los intereses se analizan por separado.
-- **Aporte y venta:** un aporte de propietarios incrementa patrimonio neto según corresponda; no es un ingreso por ventas.
-- **Fondo fijo:** algunos métodos registran cada gasto contra Fondo fijo y luego reponen; otros registran el gasto al rendir y mantienen fijo el saldo contable. No mezcles ambos métodos en una misma rendición.
-- **Cierre de resultados:** las cuentas de resultados se cierran o transfieren según el procedimiento aplicado; el cierre no convierte automáticamente en pago o cobro los importes devengados.
-- **Depreciación:** reconocer depreciación no implica necesariamente una salida de efectivo en ese momento. Depreciación acumulada es regularizadora; depreciación del ejercicio es resultado negativo.
-
-## 12. Repaso rápido
-
-1. ¿Qué representa la cuenta? ¿Activo, pasivo, patrimonio neto, resultado, regularizadora o cuenta de orden?
-2. ¿El hecho ya ocurrió o solo se cobró/pagó por anticipado?
-3. ¿Qué aumenta y qué disminuye? ¿Se debe aplicar una regularizadora?
-4. ¿Cada asiento equilibra? ¿Los movimientos pasaron al mayor y los saldos están bien calculados?
-5. ¿La igualdad patrimonial coincide sin duplicar resultados ni regularizadoras?
-6. ¿El ejercicio exige un criterio, nombre o supuesto diferente al de este manual?
+#### Intereses positivos a devengar
+- **Clasificación:** Regularizadora del Activo.
+- **Representa:** los intereses incluidos en una venta financiada que todavía no transcurrieron.
+- **Se acredita:** al registrar la venta financiada.
+- **Se debita:** a medida que se devengan, pasando a **Intereses ganados**.
+- **Saldo acreedor:** intereses pendientes de devengar. Se **resta** del activo (Deudores por ventas).

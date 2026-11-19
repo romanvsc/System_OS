@@ -1,4 +1,4 @@
-# Unidad 1 propuesta — Ejercicio 3: Usuarios de información
+# Unidad 1 — Ejercicio 3: Usuarios de información
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

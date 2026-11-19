@@ -1,4 +1,4 @@
-# Unidad 2 propuesta — Ejercicio 2: Notas de crédito y débito
+# Unidad 2 — Ejercicio 2: Notas de crédito y débito
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

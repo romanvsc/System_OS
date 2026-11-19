@@ -1,47 +1,86 @@
-# Unidad 3 propuesta: patrimonio y ecuación contable
+# Unidad 3: Elementos del patrimonio y la ecuación contable
 
-> Esta numeración es una propuesta que respeta el orden de las secciones de temas-teoria.md. El documento original presenta dos secciones llamadas Unidad 3 y ubica la Unidad 5 antes de ellas; no se afirma que esta sea la numeración oficial de la materia.
-> Sección original: Unidad 3: ELEMENTOS DEL PATRIMONIO Y LA ECUACIÓN CONTABLE.
+> Fuente: [UNIDAD3.md](../UNIDAD3.md) (material de la materia). Se reordenó y se quitaron los números de cita. Los puntos que la fuente **no desarrolla** (partida simple y variaciones mixtas) se completan con la definición habitual y se marcan así.
 
-## 1. Informes y patrimonio
+## 1. Informes contables de uso interno y externo
 
-Los informes internos ayudan a gestionar y controlar; los externos comunican información a terceros según sus necesidades y las reglas aplicables. El **patrimonio** se analiza en bienes y derechos, obligaciones y participación residual.
+- **Uso interno:** permite la comprobación, el gobierno y la dirección de la empresa. Los dueños y socios lo usan para decidir sobre la actividad, mejorar resultados o endeudarse más o menos.
+- **Uso externo:** sirve a terceros: al **fisco** (AFIP) como base para calcular impuestos; a los **bancos** para decidir si dan crédito; y a cualquier tercero interesado en los resultados o la solidez de la empresa.
 
-El **activo (A)** comprende recursos y derechos identificables bajo el marco de estudio; el **pasivo (P)**, obligaciones; el **patrimonio neto (PN)** es la participación residual: activo menos pasivo. El **capital** representa aportes de propietarios según la definición de las cuentas utilizadas; no es sinónimo de todo el activo ni necesariamente de todo el patrimonio neto.
+## 2. Patrimonio: activo, pasivo y patrimonio neto
 
-## 2. Igualdad estática y resultados
+**Patrimonio:** conjunto de bienes, derechos y obligaciones de una persona física o jurídica.
 
-La igualdad patrimonial estática es:
+| Elemento | Qué es | Saldo | Ejemplos de cuentas |
+| --- | --- | --- | --- |
+| **Activo** | Bienes (dinero, mercaderías, muebles, rodados…) y **derechos a cobrar** (lo que los clientes nos deben, pagarés a favor). Todos los recursos de la empresa. | Deudor o saldado | Caja, Banco, Mercaderías, Deudores por ventas, Documentos a cobrar, Muebles y útiles, Rodados |
+| **Pasivo** | Deudas u obligaciones: dinero o bienes que la empresa debe entregar por operaciones ya realizadas y todavía no pagadas. | Acreedor o saldado | Proveedores, Acreedores varios, Documentos a pagar |
+| **Patrimonio neto** | **Activo − Pasivo** (lo que tiene menos lo que debe). Es la parte de los dueños: empieza con el **Capital** y aumenta o disminuye con los resultados. | Acreedor | Capital, Utilidad del ejercicio, Quebranto del ejercicio |
 
-```text
-Activo = Pasivo + Patrimonio neto
-Patrimonio neto = Activo − Pasivo
-```
+## 3. Capital e igualdad patrimonial estática
 
-Si hay activo 12.000 y pasivo 5.000, el patrimonio neto es 7.000. Las cifras se refieren a un momento determinado.
-
-Los **resultados positivos** aumentan el patrimonio neto y los **resultados negativos** lo disminuyen, según su reconocimiento. En un esquema inicial simplificado, sin retiros ni otros movimientos del PN: `PN final = capital inicial + resultados positivos − resultados negativos`. La expresión dinámica correspondiente es `A = P + capital inicial + resultados positivos − resultados negativos`; no debe usarse sin ajustar si existen aportes, retiros u otros componentes adicionales.
-
-Para comprobar los saldos del mayor con los resultados separados, usamos la misma igualdad reordenada:
+- **Capital:** la inversión inicial de los propietarios; es la fuente de financiación propia.
+- **Igualdad estática:** muestra recursos y fuentes **en el momento inicial**, antes de operar:
 
 ```text
-Activo + Resultados negativos = Pasivo + Capital + Resultados positivos
+ACTIVO = PASIVO + CAPITAL
 ```
 
-Aquí el capital es el componente del patrimonio neto considerado en este ejemplo; si hay otros componentes, también se incorporan en el lado que corresponda. No se suma el resultado otra vez si se usa el patrimonio neto final, porque ya está incluido. Por ejemplo, activo 1.100 y resultados negativos 200 igualan pasivo 100 + capital 1.000 + resultados positivos 200: ambos lados suman 1.300. La igualdad estática equivalente es 1.100 = 100 + 1.000.
+Ejemplo de la fuente: la empresa necesita $100.000; los socios aportan $60.000 y se piden $40.000 prestados → 100.000 = 40.000 + 60.000.
 
-Las cuentas regularizadoras se tratan según la cuenta que ajustan: por ejemplo, un interés positivo a devengar puede restar del activo y un interés negativo a devengar del pasivo, según el criterio adoptado. No son todavía resultados devengados.
+## 4. Resultados positivos y negativos
 
-## 3. Rueda operativa y variaciones
+Los **resultados** son las variaciones del patrimonio neto que provocan las operaciones.
 
-La **rueda operativa** es una forma de describir el ciclo de operaciones: adquirir recursos, vender bienes o prestar servicios, cobrar y pagar; sus pasos y orden real dependen de la actividad.
+- **Positivos (ganancias):** **aumentan** el PN. Ej.: Ventas, Alquileres ganados, Intereses ganados, Comisiones ganadas, Descuentos obtenidos.
+- **Negativos (pérdidas):** **disminuyen** el PN. Ej.: Costo de mercaderías vendidas, Alquileres perdidos, Impuestos, Sueldos y jornales, Gastos generales.
 
-- **Permutativa:** cambia la composición patrimonial sin cambiar el patrimonio neto. Ejemplo: comprar un equipo al contado cambia efectivo por equipo.
-- **Modificativa:** cambia el patrimonio neto por un resultado; por ejemplo, reconocer un gasto que no forma parte de un intercambio de igual valor dentro del activo.
-- **Mixta:** combina cambios de composición con un efecto en el patrimonio neto. Por ejemplo, en una venta al contado de un bien con costo 60 por un precio de 100, sin impuestos ni otros costos, aumenta el efectivo en 100, sale el bien por 60 y el resultado positivo es 40. La clasificación depende del hecho completo y de su reconocimiento; no basta mirar un solo componente.
+*(La fuente usa «Alquileres cobrados/pagados»; el manual de la cátedra los llama «Alquileres ganados/perdidos». Son sinónimos.)*
 
-## 4. Formas de registro y bases de reconocimiento
+## 5. Ecuación contable dinámica
 
-La **partida simple** registra determinados movimientos sin exigir que cada operación tenga el esquema completo de contrapartidas de partida doble. La **partida doble** representa cada operación con débitos y créditos de igual importe, usando al menos una contrapartida; la igualdad no reemplaza el análisis de las cuentas.
+Cuando la empresa empieza a operar, la igualdad incorpora los resultados:
 
-En la **base percibido** se considera el momento del cobro o pago según el criterio utilizado. En la **base devengado**, los ingresos y gastos se reconocen cuando se generan, aunque su cobro o pago ocurra en otro momento, con las condiciones y reglas aplicables al ejercicio. Por ejemplo, prestar en diciembre un servicio a cobrar en enero permite distinguir el reconocimiento del servicio del cobro posterior.
+```text
+ACTIVO = PASIVO + CAPITAL + RESULTADOS POSITIVOS − RESULTADOS NEGATIVOS
+```
+
+Pasando los resultados negativos al otro lado, queda la **forma de comprobación** que usamos en los finales:
+
+```text
+ACTIVO + RESULTADOS NEGATIVOS = PASIVO + CAPITAL + RESULTADOS POSITIVOS
+```
+
+**Utilidad:** es la base de la registración y de la partida doble; muestra no solo los aportes iniciales sino el efecto de las operaciones sobre el patrimonio.
+
+## 6. Rueda operativa
+
+Es el **ciclo de operaciones** de una empresa comercial: **comprar mercaderías → pagarlas → venderlas → cobrarlas**, y con lo cobrado se vuelve a comprar. El ciclo se retroalimenta.
+
+## 7. Variaciones patrimoniales
+
+| Tipo | Efecto sobre el PN | Cuentas de resultado | Ejemplos |
+| --- | --- | --- | --- |
+| **Permutativas** (cualitativas) | **No** lo modifican: cambia la composición del activo y/o pasivo. | No intervienen | Comprar muebles en efectivo (A↑ A↓). Comprar a crédito (A↑ P↑). Documentar una deuda con un pagaré (P↓ P↑). Pagar un pagaré (P↓ A↓). |
+| **Modificativas** (cuantitativas) | **Sí** lo modifican: **aumentativas** (ganancia) o **disminutivas** (pérdida). | Siempre intervienen | Cobrar un alquiler: Caja ↑ y Alquileres ganados (aumentativa). Pagar un impuesto: Impuestos y Caja ↓ (disminutiva). |
+| **Mixtas** | Una parte cambia la composición y otra parte modifica el PN. | Intervienen | Vender mercadería con ganancia: entra el dinero de la venta, sale la mercadería al costo, y la diferencia es ganancia. |
+
+*Sobre las mixtas:* la fuente no usa el término, pero indica que si un mismo asiento tiene resultados positivos y negativos, se clasifica como **aumentativo** si pesa más el positivo y **disminutivo** si pesa más el negativo. La definición de «mixta» de la tabla es la habitual en los manuales.
+
+## 8. Formas de registrar: partida simple y partida doble
+
+- **Partida simple** *(no está en la fuente; definición habitual)*: anota cada operación una sola vez, sin contrapartida. Es la forma del **período empírico** (ver Unidad 1). No permite controlar que el registro esté equilibrado.
+- **Partida doble:** método que usa la contabilidad para registrar. Principio: **no hay deudor sin acreedor ni acreedor sin deudor**. En todo asiento hay al menos una cuenta en el Debe y una en el Haber, y **el total del Debe es igual al total del Haber**.
+  - Todo lo que **se recibe** se debita; todo lo que **se entrega** se acredita.
+  - **Activo y Pérdidas:** aumentan por el **Debe** y disminuyen por el Haber.
+  - **Pasivo, Patrimonio neto y Ganancias:** aumentan por el **Haber** y disminuyen por el Debe.
+
+## 9. Bases de apropiación: percibido y devengado
+
+| | **Devengado** | **Percibido** |
+| --- | --- | --- |
+| **Cuándo se registra** | Cuando **ocurre** el hecho (se vende, se presta el servicio, se genera el gasto), aunque se cobre o pague después. | Cuando **se cobra o se paga** el dinero. |
+| **Para qué sirve** | Refleja todos los ingresos y gastos del ejercicio. Es el criterio **obligatorio** para la contabilidad en Argentina (normas profesionales, NIIF). | Saber cuánto dinero hay disponible y proyectar faltantes o sobrantes (flujo de efectivo). |
+| **Ejemplo** | La cuota de un colegio se registra al facturarse, aunque se pague más adelante (queda «a cobrar»). | Se registra el ingreso recién cuando el padre paga. |
+
+La diferencia entre ambas bases permite separar lo **económico** (devengado) de lo **financiero** (percibido).

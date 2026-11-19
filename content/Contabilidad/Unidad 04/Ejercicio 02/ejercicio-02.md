@@ -1,4 +1,4 @@
-# Unidad 4 propuesta — Ejercicio 2: Cuenta T de Caja
+# Unidad 4 — Ejercicio 2: Cuenta T de Caja
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

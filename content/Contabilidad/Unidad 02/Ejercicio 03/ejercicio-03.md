@@ -1,24 +1,21 @@
-# Unidad 2 propuesta — Ejercicio 3: Distinguir documentos de pago
+# Unidad 2 — Ejercicio 3: Distinguir documentos de pago
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 
 ## Enunciado
 
-Una persona firma una promesa de pago, entrega un instrumento identificado como cheque de pago diferido y recibe una comunicación de su banco que informa un crédito en su cuenta. Identificá cada documento o instrumento.
-
-## Datos y supuestos
-
-Se supone que la comunicación bancaria informa un aumento en la cuenta. Se analizan sus funciones, sin requisitos legales particulares.
+Una empresa: a) firma una promesa de pagar $5.000 a 60 días a un proveedor; b) paga a otro proveedor con un cheque con fecha de cobro a 30 días; c) paga un servicio con un cheque que se cobra al presentarlo; d) deposita la recaudación del día y el banco le sella el formulario. Identificá cada documento y sus partes principales.
 
 ## Resolución paso a paso
 
-1. La promesa de pago corresponde conceptualmente a un pagaré.
-2. El instrumento indicado es un cheque de pago diferido, sujeto a las reglas que resulten aplicables. No se deduce el tipo de cheque solamente de una fecha posterior.
-3. La comunicación del banco es una nota de crédito bancaria.
-4. La nota de crédito bancaria no es la nota de crédito comercial usada, por ejemplo, para reducir el saldo de una factura.
+1. **a) Pagaré:** promesa escrita de pagar una suma en un plazo. Librador: la empresa; beneficiario: el proveedor. Se transfiere por endoso.
+2. **b) Cheque de pago diferido:** orden de pago a una fecha posterior. Admite hasta dos endosos. En la contabilidad de la empresa se registra en **Valores diferidos a pagar**.
+3. **c) Cheque común:** orden de pago a la vista contra un banco (girado). Vigencia de 30 días.
+4. **d) Nota de crédito bancaria / boleta de depósito:** la confecciona quien deposita y el banco la sella como constancia.
+5. No confundir la nota de crédito **bancaria** (constancia de depósito) con la nota de crédito **comercial** (reduce lo que debe un cliente).
 
 ## Resultado
 
-Pagaré; cheque de pago diferido; nota de crédito bancaria.
+a) Pagaré; b) cheque de pago diferido; c) cheque común; d) nota de crédito bancaria (boleta de depósito).
 
 [Ver versión SVG](ejercicio-03.svg) · [Ver versión PNG](ejercicio-03.png)

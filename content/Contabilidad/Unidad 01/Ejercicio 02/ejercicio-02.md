@@ -1,4 +1,4 @@
-# Unidad 1 propuesta — Ejercicio 2: Origen y aplicación de recursos
+# Unidad 1 — Ejercicio 2: Origen y aplicación de recursos
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

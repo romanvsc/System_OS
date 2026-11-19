@@ -1,4 +1,4 @@
-# Unidad 5 propuesta — Ejercicio 2: Compra con pago parcial
+# Unidad 5 — Ejercicio 2: Compra con pago parcial
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 

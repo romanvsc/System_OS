@@ -1,4 +1,4 @@
-# Unidad 1 propuesta — Ejercicio 1: Clasificar organizaciones
+# Unidad 1 — Ejercicio 1: Clasificar organizaciones
 
 **Ejemplo didáctico original**, creado para estudiar; no es un enunciado de la profesora.
 
